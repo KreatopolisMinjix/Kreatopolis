@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root{
+    --backgroundcolor: #E6D8C1;
+    --DarkestColor: #2d2017;
+    --ContrastColor: #3D2B1F;
+    --SoftColor_1: #8e9680;
+    --SoftColor_2: #A37C76;
+    --SoftColor_3: #D9B382;
+    --SoftColor_4: #9e9182;
+    --MiniText:10px;
+    --MildText:20px;
+    --MidiText:25px;
+    --BigText:45px;
+    --XLText:75px;
+    --XXLText:100px;
+}
+body{
+    margin:0;
+    background-color: var(--backgroundcolor);
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    color: var(--ContrastColor);
+    overflow-wrap: break-word; 
+    white-space: normal;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    height: 75px;
+    gap: 200px;
+    border-bottom: 1px solid var(--SoftColor_4);
+}
+nav .icon {
+  display: none;
+}
+nav h1
+{
+    color: var(--SoftColor_2);
+    font-size: var(--BigText);
+}
+
+nav a{
+    position: relative;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--DarkestColor);
+    font-size: var(--MidiText);
+}
+
+nav a:hover {
+  color: var(--SoftColor_2);
+}
+
+nav a:not(.activelinkindex):before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 8px;
+  left: 0;
+  background-color: var(--SoftColor_2);
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::before {
+  transform: scaleX(1);
+}
+
+
+
+.TextPart {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#kontakt{
+    min-height: 10vh;
+     margin-top: 0px;
+}
+.TextPart2 {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+
+
+.banner{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px dashed var(--SoftColor_4);
+    border-bottom: 1px dashed var(--SoftColor_4);
+}
+#BannerKontakt
+{
+    min-height: 80vh;
+    border-top: none;
+    border-bottom: none;
+}
+
+.ProgramiSekcije{
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+    gap: 120px;
+}
+
+.introduction{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.introduction img{
+    width: 800px;
+    height: 800px;
+    border-radius: 25px;
+}
+
+.LittleText{
+    color: var(--SoftColor_2);
+    font-size: var(--MidiText);
+}
+
+.introduction_Text{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    overflow-wrap: break-word; 
+    white-space: normal;
+}
+
+.StatHolder{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.Stat{
+    display: flex;
+    flex-direction: column;  
+}
+.Stat h1{
+    margin-bottom: -10px;
+    color: var(--SoftColor_2);
+}
+.Stat p{
+    font-style: normal;
+}
+
+
+
+.Texts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: min(1000px, 90%);
+    text-align: center;
+    
+}
+
+.Texts h1{
+    font-size: var(--XXLText);
+    overflow-wrap: break-word; 
+    white-space: normal;
+}
+
+#DefaultButtonStyle{
+    margin-top: 50px;
+    background-color: var(--ContrastColor);
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    justify-self: center;
+}
+
+#DefaultButtonStyle a{
+    text-decoration: none;
+    color: var(--backgroundcolor);
+}
+
+#DefaultButtonStyle:hover{
+    background-color: var(--SoftColor_2);
+}
+
+
+@media (max-width: 1100px){
+    .introduction img{
+        align-self: center;
+        width: 350px;
+        height: 350px;
+        border-radius: 25px;
+    }
+    .Texts h1{
+        font-size: var(--BigText);
+    }
+    .introduction{
+        flex-direction: column;
+    }
+    .TextPart{
+        margin-bottom: 50px;
+    }
+    .StatHolder{
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: .2;
+    margin-bottom: 20px;
+    border-top: 1px solid var(--SoftColor_4);
+}
+
+.FooterText{
+    color: var(--SoftColor_2);
+    font-size: var(--MildText);
+}
+.FooterTextDark{
+    color: var(--ContrastColor);
+    font-size: var(--MiniText);
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        justify-content: space-between; 
+        gap: 0;
+        position: relative;
+    }
+
+    nav a.activelinkindex {
+        order: 1;
+        padding: 0;        
+        display: flex;     
+        align-items: center;
+    }
+
+    nav h1 {
+        font-size: 35px; 
+        margin: 0;
+    }
+}
+
+
+
+/*Burger padajuci meni za telefone*/
+
+
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--DarkestColor);
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+}
+
+.nav-links-mobile {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 96px;
+    left: 0;
+    width: 100%;
+    background-color: var(--backgroundcolor);
+    border-bottom: 1px solid var(--SoftColor_4);
+    z-index: 100;
+    padding: 10px 0;
+}
+
+.nav-links-mobile.open {
+    display: flex;
+}
+
+.nav-links-mobile a {
+    padding: 15px 25px;
+    font-size: var(--MildText);
+    text-decoration: none;
+    color: var(--DarkestColor);
+}
+
+@media (max-width: 768px) {
+    nav a:not(.activelinkindex) {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        order: 1;
+    }
+    nav .activelinkindex {
+        order: 0;
+    }
+}
+
+.Sekcija{
+    display: flex;
+    flex-direction: column;
+}
+
+.Program {
+    width: 400px;
+    max-width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--DarkestColor);
+    border-radius: 25px;
+    transition: border-radius 0.3s ease;
+    background:
+    linear-gradient(
+        rgba(49, 32, 4, 0.649),
+        #49230a84
+    );
+}
+
+
+
+
+.Program div{
+    padding: 15px;
+}
+
+.Program.open {
+    border-radius: 25px 25px 0px 0px;
+}
+
+.Podsekcija{
+    width: 400px;
+    max-width: 400px;
+    background-color: var(--SoftColor_3);
+    border-radius: 0px 0px 25px 25px;
+    display: none;
+    overflow: hidden;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    gap: 30px;
+        display: flex;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+
+}
+.Podsekcija.open {
+    opacity: 1;
+    max-height: 1000px;
+}
+
+.Podsekcija details{
+    padding: 15px 15px;
+}
+
+.izrolaj:active{
+    .Program{
+        border-radius: 25px 25px 0px 0px;
+    }
+}
+
+details summary {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+details[open] summary {
+    color: var(--SoftColor_2);
+}
+
+details p {
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+.animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+}
+
+#program{
+    align-items: left;
+    justify-self: left;
+    text-align: left;
+    font-size: var(--MidiText);
+    color: var(--SoftColor_3);
+    text-shadow: -2px -2px rgb(39, 19, 5);
+}
+
+#ViseInformacija{
+    margin-top: 220px;
+    display: flex;
+    background: none;
+    border:none;
+    width: 400px;
+    height: 100px;
+    justify-self: bottom;
+    align-self: left;
+    color: var(--SoftColor_3);
+    font-size: var(--MidiText);
+    text-shadow: -2px -2px rgb(39, 19, 5);
+}
+
+.ProgramIntroduction
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-top: 1px dashed var(--SoftColor_4);
+    border-bottom: 1px dashed var(--SoftColor_4);
+}
+
+@media (max-width: 768px) {
+    .box{
+        flex-direction: column;
+        align-items: center;
+    }
+    .Sekcija {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .Program {
+        width: 90vw;
+        height: 350px;
+    }
+
+    .Podsekcija {
+        width: 90vw;
+        max-width: 90vw;
+    }
+    #DescriptionText{
+        text-align: center;
+    }
+    .ProgramIntroduction{
+        width: 90vw;
+    }
+    #ViseInformacija {
+        width: 100%;
+        margin-top: 180px;
+    }
+}
+
