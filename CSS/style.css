@@ -488,3 +488,22 @@ details p {
     }
 }
 
+#MapButton{
+    margin-top: 30px;
+    background-color: var(--ContrastColor);
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    justify-self: center;
+    margin-bottom: 30px;
+    
+}
+
+#MapButton a{
+    text-decoration: none;
+    color: var(--backgroundcolor);
+}
+
+#MapButton:hover{
+    background-color: var(--SoftColor_2);
+}
