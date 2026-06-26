@@ -2,6 +2,7 @@
 
 :root{
     --backgroundcolor: #E6D8C1;
+    --backgroundcolor2:rgb(253, 243, 222);
     --DarkestColor: #2d2017;
     --ContrastColor: #3D2B1F;
     --SoftColor_1: #8e9680;
@@ -17,22 +18,31 @@
 }
 body{
     margin:0;
-    background-color: var(--backgroundcolor);
+    background-color: var(--backgroundcolor2);
     font-family: "Fraunces", serif;
     font-style: italic;
     color: var(--ContrastColor);
     overflow-wrap: break-word; 
     white-space: normal;
+    
 }
 
-nav{
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--backgroundcolor);
     padding: 10px 20px;
     height: 75px;
     gap: 200px;
     border-bottom: 1px solid var(--SoftColor_4);
+
+    z-index: 1000;
 }
 nav .icon {
   display: none;
@@ -86,7 +96,7 @@ nav a:hover::before {
 
 #kontakt{
     min-height: 10vh;
-     margin-top: 0px;
+    
 }
 .TextPart2 {
     min-height: 50vh;
@@ -226,6 +236,7 @@ nav a:hover::before {
         justify-content: center;
         text-align: center;
     }
+    
 }
 
 footer{
@@ -248,11 +259,10 @@ footer{
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     nav {
         justify-content: space-between; 
         gap: 0;
-        position: relative;
     }
 
     nav a.activelinkindex {
@@ -290,7 +300,7 @@ footer{
 .nav-links-mobile {
     display: none;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 96px;
     left: 0;
     width: 100%;
@@ -311,7 +321,7 @@ footer{
     color: var(--DarkestColor);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     nav a:not(.activelinkindex) {
         display: none;
     }
@@ -319,10 +329,13 @@ footer{
     .burger {
         display: block;
         order: 1;
+        margin-right: 40px;
     }
     nav .activelinkindex {
         order: 0;
     }
+
+
 }
 
 .Sekcija{
@@ -458,7 +471,7 @@ details p {
     border-bottom: 1px dashed var(--SoftColor_4);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .box{
         flex-direction: column;
         align-items: center;
@@ -507,3 +520,4 @@ details p {
 #MapButton:hover{
     background-color: var(--SoftColor_2);
 }
+
