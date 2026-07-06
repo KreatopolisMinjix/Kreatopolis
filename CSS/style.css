@@ -1,27 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap');
 
 :root{
-    --backgroundcolor: #E6D8C1;
-    --backgroundcolor2:rgb(215, 213, 209);
-    --DarkestColor: #2d2017;
-    --ContrastColor: #3D2B1F;
-    --SoftColor_1: #8e9680;
-    --SoftColor_2: #E6D8C1;
-    --SoftColor_3: #D9B382;
-    --SoftColor_4: #9e9182;
-    --navy: #403126;
-    --navy-2: #554338;
-    --bright-light: #927563;
-    --ink: #26241f;
+--backgroundcolor: #F7F2E9;
+--backgroundcolor2: #ECE4D8;
 
-    --cream: #f7f2e9;
-    --cream-2: #efe7d8;
-    --gold: #d9a75c;
-    --gold-light: #ecd4a6;
-    --terracotta: #c9714f;
-    --ink: #26241f;
-    --ink-soft: #55524a;
-    --white: #ffffff;
+--DarkestColor: #231A14;
+--ContrastColor: #34271E;
+
+--SoftColor_1: #8E8576;
+--SoftColor_2: #F7F2E9;
+--SoftColor_3: #CFA36A;
+--SoftColor_4: #A3917F;
+
+--navy: #35271E;
+--navy-2: #4A382D;
+
+--bright-light: #886755;
+
+--cream:#FAF7F2;
+--cream-2:#F1E8DA;
+
+--gold:#D5A15C;
+--gold-light:#ECD4A6;
+
+--terracotta:#C46C4C;
+
+--ink:#2C241E;
+--ink-soft:#665A50;
+
+--white:#FFFFFF;
     --font-display: "Fraunces", serif;
     --font-body: "Karla", sans-serif;
     --MiniText:10px;
@@ -51,7 +58,15 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--navy);
+    background:
+
+    rgba(53,39,30,.78);
+
+    backdrop-filter:
+
+    blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
     padding: 10px 20px;
     height: 75px;
     gap: 200px;
@@ -108,7 +123,7 @@ nav a:hover::before {
 
 
 /* =========================
-   HERO sekcija
+   HERO SECTION (ALL CSS)
    ========================= */
 
 .hero{
@@ -116,12 +131,38 @@ nav a:hover::before {
   min-height: 100vh;
   display:flex;
   align-items:center;
-  background:
-    radial-gradient(at 0% 0%, var(--navy-2) 0px, transparent 100%),
-    radial-gradient(at 100% 0%, var(--bright-light) 0px, transparent 100%),
-    radial-gradient(at 50% 100%, var(--navy-2) 0px, transparent 100%);
+background:
+
+linear-gradient(
+180deg,
+var(--DarkestColor),
+var(--navy)
+70%,
+var(--navy-2)
+100%
+);
   overflow:hidden;
   padding: 140px 24px 100px;
+}
+.hero::before{
+
+content:"";
+
+position:absolute;
+inset:0;
+
+background:
+
+radial-gradient(circle at 15% 20%,
+rgba(213,161,92,.08),
+transparent 30%),
+
+radial-gradient(circle at 85% 70%,
+rgba(196,108,76,.10),
+transparent 35%);
+
+pointer-events:none;
+
 }
 
 /* Floating notes wrapper */
@@ -210,7 +251,7 @@ nav a:hover::before {
 }
 
 .wave-divider path{
-  fill: var(--backgroundcolor);
+  fill:var(--cream);
 }
 
 /* Optional helper styles used in hero */
@@ -246,10 +287,16 @@ nav a:hover::before {
     margin-top: 100px;
     background-color: var(--navy);
     color: var(--backgroundcolor);
-        background-image: 
-    radial-gradient(at 0% 0%, var(--navy-2) 0px, transparent 100%),
-    radial-gradient(at 100% 0%, var(--bright-light) 0px, transparent 100%),
-    radial-gradient(at 50% 100%, var(--navy-2) 0px, transparent 100%);
+background-image:
+
+linear-gradient(
+180deg,
+var(--DarkestColor),
+var(--navy)
+70%,
+var(--navy-2)
+100%
+);
 }
 
 #kontakt{
@@ -301,7 +348,9 @@ nav a:hover::before {
 .introduction img{
     width: 800px;
     height: 800px;
-    border-radius: 25px;
+    border-radius:32px;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.12);
 }
 
 .LittleText{
@@ -512,11 +561,17 @@ footer{
     background-color: var(--navy);
     text-align: left;
 
-    background-image: 
-    radial-gradient(at 0% 0%, var(--navy-2) 0px, transparent 100%),
-    radial-gradient(at 100% 0%, var(--bright-light) 0px, transparent 100%),
-    radial-gradient(at 50% 100%, var(--navy-2) 0px, transparent 100%);
+    background-image:linear-gradient(
+    180deg,
+    var(--DarkestColor),
+    var(--navy)
+    70%,
+    var(--navy-2)
+    100%);
+    
 }
+
+
 
 
 #Mikrofon{
