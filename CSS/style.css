@@ -2,13 +2,28 @@
 
 :root{
     --backgroundcolor: #E6D8C1;
-    --backgroundcolor2:rgb(253, 243, 222);
+    --backgroundcolor2:rgb(215, 213, 209);
     --DarkestColor: #2d2017;
     --ContrastColor: #3D2B1F;
     --SoftColor_1: #8e9680;
-    --SoftColor_2: #A37C76;
+    --SoftColor_2: #E6D8C1;
     --SoftColor_3: #D9B382;
     --SoftColor_4: #9e9182;
+    --navy: #403126;
+    --navy-2: #554338;
+    --bright-light: #927563;
+    --ink: #26241f;
+
+    --cream: #f7f2e9;
+    --cream-2: #efe7d8;
+    --gold: #d9a75c;
+    --gold-light: #ecd4a6;
+    --terracotta: #c9714f;
+    --ink: #26241f;
+    --ink-soft: #55524a;
+    --white: #ffffff;
+    --font-display: "Fraunces", serif;
+    --font-body: "Karla", sans-serif;
     --MiniText:10px;
     --MildText:20px;
     --MidiText:25px;
@@ -18,10 +33,10 @@
 }
 body{
     margin:0;
-    background-color: var(--backgroundcolor2);
+    background-color: var(--backgroundcolor);
     font-family: "Fraunces", serif;
     font-style: italic;
-    color: var(--ContrastColor);
+    color: var(--navy);
     overflow-wrap: break-word; 
     white-space: normal;
     
@@ -36,20 +51,28 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--backgroundcolor);
+    background-color: var(--navy);
     padding: 10px 20px;
     height: 75px;
     gap: 200px;
-    border-bottom: 1px solid var(--SoftColor_4);
+    border-bottom: 1px solid var(--bright-light);
 
     z-index: 1000;
 }
+
+.nav.is-scrolled{
+  padding: 12px 0;
+  background: rgba(27,31,46,.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px -12px rgba(0,0,0,.4);
+}
+
 nav .icon {
   display: none;
 }
 nav h1
 {
-    color: var(--SoftColor_2);
+    color: var(--backgroundcolor);
     font-size: var(--BigText);
 }
 
@@ -57,7 +80,7 @@ nav a{
     position: relative;
     padding: 20px;
     text-decoration: none;
-    color: var(--DarkestColor);
+    color: var(--backgroundcolor);
     font-size: var(--MidiText);
 }
 
@@ -84,14 +107,149 @@ nav a:hover::before {
 }
 
 
+/* =========================
+   HERO SECTION (ALL CSS)
+   ========================= */
+
+.hero{
+  position:relative;
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  background:
+    radial-gradient(at 0% 0%, var(--navy-2) 0px, transparent 100%),
+    radial-gradient(at 100% 0%, var(--bright-light) 0px, transparent 100%),
+    radial-gradient(at 50% 100%, var(--navy-2) 0px, transparent 100%);
+  overflow:hidden;
+  padding: 140px 24px 100px;
+}
+
+/* Floating notes wrapper */
+.hero__notes{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  color: rgba(217,167,92,.18);
+}
+
+/* Base note style */
+.note{
+  position:absolute;
+  width: 70px;
+  height:70px;
+}
+
+/* Individual notes */
+.note--1{
+  top: 18%;
+  left: 8%;
+  animation: float 7s ease-in-out infinite;
+}
+
+.note--2{
+  top: 62%;
+  left: 88%;
+  width: 50px;
+  height:50px;
+  animation: float 9s ease-in-out infinite reverse;
+}
+
+.note--3{
+  top: 78%;
+  left: 14%;
+  width: 40px;
+  height:40px;
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+/* Float animation */
+@keyframes float{
+  0%,100%{ transform: translateY(0) rotate(0deg); }
+  50%{ transform: translateY(-22px) rotate(6deg); }
+}
+
+/* Hero content wrapper */
+.hero__inner{
+  position:relative;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align:center;
+}
+
+/* Title */
+.hero__title{
+  color: var(--cream);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight:500;
+}
+
+/* Subtitle */
+.hero__sub{
+  color: rgba(247,242,233,.78);
+  font-size: 1.1rem;
+  max-width: 540px;
+  margin: 0 auto 2rem;
+}
+
+/* Buttons wrapper */
+.hero__actions{
+  display:flex;
+  gap: 1rem;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+/* Wave divider */
+.wave-divider{
+  position:absolute;
+  bottom:-2px;
+  left:0;
+  width:100%;
+  height: 90px;
+}
+
+.wave-divider path{
+  fill: var(--backgroundcolor);
+}
+
+/* Optional helper styles used in hero */
+.eyebrow{
+  font-size:.75rem;
+  color: var(--terracotta);
+}
+
+.ink{
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.ink_num{
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+/* Reveal animation used in hero text */
+.reveal{
+  opacity:0;
+  transform: translateY(24px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+
 
 .TextPart {
-    min-height: 50vh;
+    min-height: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+    background-color: var(--navy);
+    color: var(--backgroundcolor);
+        background-image: 
+    radial-gradient(at 0% 0%, var(--navy-2) 0px, transparent 100%),
+    radial-gradient(at 100% 0%, var(--bright-light) 0px, transparent 100%),
+    radial-gradient(at 50% 100%, var(--navy-2) 0px, transparent 100%);
 }
 
 #kontakt{
@@ -106,6 +264,7 @@ nav a:hover::before {
     align-items: center;
     margin-top: 20px;
     margin-bottom: 70px;
+    
 }
 
 
@@ -115,8 +274,6 @@ nav a:hover::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px dashed var(--SoftColor_4);
-    border-bottom: 1px dashed var(--SoftColor_4);
 }
 #BannerKontakt
 {
@@ -149,7 +306,7 @@ nav a:hover::before {
 
 .LittleText{
     color: var(--SoftColor_2);
-    font-size: var(--MidiText);
+    font-size: var(--MildText);
 }
 
 .introduction_Text{
@@ -174,7 +331,7 @@ nav a:hover::before {
 }
 .Stat h1{
     margin-bottom: -10px;
-    color: var(--SoftColor_2);
+    
 }
 .Stat p{
     font-style: normal;
@@ -289,7 +446,7 @@ footer{
     border: none;
     font-size: 30px;
     cursor: pointer;
-    color: var(--DarkestColor);
+    color: var(--backgroundcolor);
     margin: 0;
     padding: 0;
     width: auto;
@@ -304,10 +461,11 @@ footer{
     top: 96px;
     left: 0;
     width: 100%;
-    background-color: var(--backgroundcolor);
+    background-color: var(--navy-2);
     border-bottom: 1px solid var(--SoftColor_4);
     z-index: 100;
     padding: 10px 0;
+    
 }
 
 .nav-links-mobile.open {
@@ -318,7 +476,7 @@ footer{
     padding: 15px 25px;
     font-size: var(--MildText);
     text-decoration: none;
-    color: var(--DarkestColor);
+    color: var(--backgroundcolor);
 }
 
 @media (max-width: 1100px) {
@@ -346,24 +504,32 @@ footer{
 .Program {
     width: 400px;
     max-width: 400px;
-    height: 400px;
+    height: 295px;
     display: flex;
     flex-direction: column;
-    background-color: var(--DarkestColor);
-    border-radius: 25px;
+    border-radius: 20px;
     transition: border-radius 0.3s ease;
-    background:
-    linear-gradient(
-        rgba(49, 32, 4, 0.649),
-        #49230a84
-    );
+    background-color: var(--navy);
+    text-align: left;
+
+    background-image: 
+    radial-gradient(at 0% 0%, var(--navy-2) 0px, transparent 100%),
+    radial-gradient(at 100% 0%, var(--bright-light) 0px, transparent 100%),
+    radial-gradient(at 50% 100%, var(--navy-2) 0px, transparent 100%);
 }
 
 
-
+#Mikrofon{
+    width: 25px;
+    height: 30px;
+    color: var(--backgroundcolor);
+}
 
 .Program div{
-    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 0px;
 }
 
 .Program.open {
@@ -373,7 +539,7 @@ footer{
 .Podsekcija{
     width: 400px;
     max-width: 400px;
-    background-color: var(--SoftColor_3);
+    background-color: var(--navy-2);
     border-radius: 0px 0px 25px 25px;
     display: none;
     overflow: hidden;
@@ -385,6 +551,7 @@ footer{
     opacity: 0;
     max-height: 0;
     transition: opacity 0.4s ease, max-height 0.4s ease;
+    color: var(--backgroundcolor);
 
 }
 .Podsekcija.open {
@@ -436,6 +603,7 @@ details p {
     display: flex;
     flex-direction: row;
     gap: 120px;
+
 }
 
 #program{
@@ -443,22 +611,31 @@ details p {
     justify-self: left;
     text-align: left;
     font-size: var(--MidiText);
-    color: var(--SoftColor_3);
-    text-shadow: -2px -2px rgb(39, 19, 5);
+    color: var(--backgroundcolor);
+
+}
+
+#LittleTextProgram{
+    font-size: 15px;
+    align-items: left;
+    justify-self: left;
+    text-align: left;
+    color: var(--backgroundcolor2);
 }
 
 #ViseInformacija{
-    margin-top: 220px;
     display: flex;
     background: none;
     border:none;
     width: 400px;
-    height: 100px;
+    height: 75px;
     justify-self: bottom;
     align-self: left;
-    color: var(--SoftColor_3);
-    font-size: var(--MidiText);
-    text-shadow: -2px -2px rgb(39, 19, 5);
+    color: var(--backgroundcolor);
+    font-size: var(--MildText);
+    display: inline-flex;
+    align-items: center;  
+    justify-content: left;
 }
 
 .ProgramIntroduction
@@ -482,7 +659,7 @@ details p {
     }
     .Program {
         width: 90vw;
-        height: 350px;
+        height: 295px;
     }
 
     .Podsekcija {
@@ -497,13 +674,13 @@ details p {
     }
     #ViseInformacija {
         width: 100%;
-        margin-top: 180px;
+        
     }
 }
 
 #MapButton{
     margin-top: 30px;
-    background-color: var(--ContrastColor);
+    background-color: var(--navy);
     border-radius: 25px;
     width: 200px;
     height: 50px;
@@ -518,6 +695,29 @@ details p {
 }
 
 #MapButton:hover{
-    background-color: var(--SoftColor_2);
+    background-color: var(--bright-light);
 }
 
+.hero__actions a{
+    color: var(--terracotta);
+    text-decoration: none;
+    border: 2px solid var(--terracotta);
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.hero__actions a:hover{
+    color: var(--gold);
+    text-decoration: none;
+    border: 2px solid var(--gold);
+    border-radius: 30px;
+    padding: 10px; 
+}
+
+.hero__actions a:active{
+    color: var(--white);
+    text-decoration: none;
+    border: 2px solid var(--white);
+    border-radius: 30px;
+    padding: 10px; 
+}
