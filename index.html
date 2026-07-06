@@ -10,66 +10,256 @@
     <meta name="keywords" content="Kreatopolis">
     <link rel="icon" href="Images/LogoMini.png">
     <link rel="shortcut icon" href="Images/LogoMini.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/42e9f773f4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-<nav>
-    <a href="programi.html" class="AnimatedLinks">Programi</a>
-    <a href="index.html" class="activelinkindex"><h1>KREATOPOLIS</h1></a>
-    <a href="kontakt.html">Kontakt</a>
+    <nav>
+    <a href="#programi" class="AnimatedLinks">Programi</a>
+    <a href="#home" class="activelinkindex"><h1>KREATOPOLIS</h1></a>
+    <a href="#kontakt">Kontakt</a>
 
     <button class="burger" id="burgerBtn" aria-label="Otvori meni">&#9776;</button>
-</nav>
+    </nav>
 
-<div class="nav-links-mobile" id="navLinks">
-    <a href="index.html">Početna</a>
-    <a href="programi.html">Programi</a>
-    <a href="kontakt.html">Kontakt</a>
-</div>
+    <div class="nav-links-mobile" id="navLinks">
+    <a href="#home">Početna</a>
+    <a href="#ONama">O Nama</a>
+    <a href="#programi">Programi</a>
+    <a href="#kontakt">Kontakt</a>
+    </div>
 
-    <section class="TextPart">
-        <div class="Texts">
-            <p class="LittleText">Škola pevanja i muzike</p>
-            <h1>KREATOPOLIS</h1>
-            <p class="DarkerText">Muzička škola Kreatopolis nudi sveobuhvatno muzičko obrazovanje kroz aktivno učenje za decu i odrasle.<br><br>Naši muzički pedagozi su visoko kvalifikovani i dele ljubav prema podučavanju.
-                                   <br><br> Naš program obuhvata grupnu nastavu, individualne časove.<br><br> Verujemo da učenje muzike može biti zabavno i da je grupno učenje veoma efikasno.</p>
+    <section class="hero" id="home">
+        <div class="hero__notes" aria-hidden="true">
+    <svg class="note note--1" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="6" cy="18" r="3" fill="currentColor"/><circle cx="18" cy="16" r="3" fill="currentColor"/></svg>
+    <svg class="note note--2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+    <svg class="note note--3" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="6" cy="18" r="3" fill="currentColor"/><circle cx="18" cy="16" r="3" fill="currentColor"/></svg>
         </div>
-        <button id="DefaultButtonStyle"><a href="programi.html">Pogledaj Programe</a></button>
-    </section>
 
-    <section class="banner">
+        <div class="hero__inner">
+    <p class="eyebrow reveal">Škola pevanja, muzike i umetnosti</p>
+    <h1 class="hero__title reveal">
+      Pronađi svoj glas.<br>
+      Otkrij svoju <span class="ink">boju</span>.
+    </h1>
+    <p class="hero__sub reveal">
+      Kreatopolis je mesto gde deca i odrasli uče pevanje, gitaru, klavir i crtanje
+      u malim grupama, uz mentore koji vole ono što rade.
+    </p>
+    <div class="hero__actions">
+      <a href="#programi" class="btn btn--gold">Pogledaj programe</a>
+      <a href="#kontakt" class="btn btn--ghost">Zakaži čas</a>
+    </div>
+        </div>
+
+        <svg class="wave-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,64 C240,120 480,0 720,48 C960,96 1200,32 1440,64 L1440,120 L0,120 Z"></path>
+        </svg>
+    </section>    
+
+
+    <section class="banner" id="ONama">
         <div class="introduction">
-            <img src="https://scontent.cdninstagram.com/v/t51.2885-19/270010475_309009044300723_1351929338031471883_n.jpg?_nc_cat=109&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=Pw3q-Zh0geMQ7kNvwGI4IzJ&_nc_oc=Adrjy5LyCi3GlLsm-UfSd76WL4h4t1p7s9D7HkhneW0vbU8ED6rPcZLUT1zZHlXCjw4&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_ss=7b6a8&oh=00_Af9K7-MbcXzcs0R_ByOjYksL2GClr_Ij2VRK82JV-QHoag&oe=6A41EEF4" alt="slika">
+            <img src="Images/MainSlika.jpg" alt="slika">
             <div class="introduction_Text">
                 <p class="LittleText">O Nama</p>
                 <h1>Kreatopolis</h1>
-                <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
-                <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst teksttekst</p>
+                <p>Verujemo da svako nosi u sebi neku vrstu talenta — samo mu treba prostor,
+                strpljenje i pravi vodič da ga otkrije. Zato u Kreatopolisu radimo u malim
+                grupama i posvećujemo se svakom polazniku ponaosob, bez obzira na godine.</p>
+                <p>Učenje kod nas je ozbiljno u pristupu, a opušteno u atmosferi — jer se
+                najbolje uči kroz igru, ponavljanje i zajedničko stvaranje.</p>
                 <div class="StatHolder">
                     <div class="Stat">
-                        <h1>X+</h1>
-                        <p>Godina <br> iskustva </p>            
+                        <span class="ink" data-count="8"><h1>2+</h1></span>
+                        <p>Godine <br> iskustva </p>            
                     </div>
                     <div class="Stat">
-                        <h1>X+</h1>
+                        <span class="ink"><h1>200+</h1></span>
                         <p>Upisanih</p>
                     </div>
                     <div class="Stat">
-                        <h1>X+</h1>
+                        <span class="ink"><h1>4+</h1></span>
                         <p>Programa</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="TextPart2">
+    <!-- objasnjenje programa-->
+    <section class="TextPart" id="programi">
+        
         <div class="Texts">
-            <p class="LittleText">Tekst tekst Tekst tekst Tekst tekst</p>
-            <h1>TEKST TEKST TEKST TEKST TEKST</h1>
-            <p class="DarkerText">Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+            <h1>Programi</h1>
+            <p class="DarkerText">Pogledajte neke od programa koja nasa škola nudi!</p>
+        </div>
+     
+    </section>
+
+<!-- program 1 npr pevanje-->
+    <section class="ProgramiSekcije">
+
+        <!--<div class="ProgramIntroduction">
+            <p class="LittleText">Pevanje</p>
+            <img class="ProgramIcon" src="Images/Mic.png">
+            <p class="DarkerText" id="DescriptionText">Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+        </div>-->
+
+        <div class="box">
+            <div class="Sekcija">
+
+                <div class="Program">
+                    <div>
+                        <i class="fa fa-microphone" style="font-size:36px;color:#E6D8C1"></i>
+                        <p class="LittleText" id="program">Pevanje   </p> 
+                        <p class="LittleText" id="LittleTextProgram"> Rad na disanju, sluhu i sceničkom nastupu — od dečjih pesmica do prvog nastupa.</p>
+                        <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('podsekcija-1', this)">Više informacija →</button>
+                    </div>
+                </div>
+
+                <div class="Podsekcija" id="podsekcija-1">
+                    <details>
+                        <summary>Podsekcija 1</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>
+                    <details>
+                        <summary>Podsekcija 2</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>
+                    <details>
+                        <summary>Podsekcija 3</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>                
+                    <details>
+                        <summary>Podsekcija 4</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>
+                </div>
+            </div>
+            
+            <div class="Sekcija">
+
+                <div class="Program">
+                    <div>
+                        <i class='fas fa-guitar' style='font-size:36px; color:#E6D8C1'></i>
+                        <p class="LittleText" id="program">Gitara</p> 
+                        <p class="LittleText" id="LittleTextProgram"> Od prvog akorda do prve pesme koju sviraš napamet — akustična i električna gitara.</p>
+                        <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('podsekcija-2', this)">Više informacija →</button>
+                    </div>
+                </div>
+
+                <div class="Podsekcija" id="podsekcija-2">
+                    <details>
+                        <summary>Podsekcija 1</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>
+                    <details>
+                        <summary>Podsekcija 2</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>
+                    <details>
+                        <summary>Podsekcija 3</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>                
+                    <details>
+                        <summary>Podsekcija 4</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>
+                </div>
+            </div> 
+            
+            <div class="Sekcija">
+
+                <div class="Program">
+                    <div>
+                        <i class='fas fa-keyboard' style='font-size:36px; color:#E6D8C1'></i>
+                        <p class="LittleText" id="program">Klavir</p> 
+                        <p class="LittleText" id="LittleTextProgram"> Klasika i savremena muzika, notno čitanje i sviranje po sluhu — u sopstvenom tempu.</p>
+                        <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('podsekcija-3', this)">Više informacija →</button>
+                    </div>
+                </div>
+
+                <div class="Podsekcija" id="podsekcija-3">
+                    <details>
+                        <summary>Podsekcija 1</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>
+                    <details>
+                        <summary>Podsekcija 2</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>
+                    <details>
+                        <summary>Podsekcija 3</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>                
+                    <details>
+                        <summary>Podsekcija 4</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>
+                </div>
+            </div>   
+
+            <div class="Sekcija">
+
+                <div class="Program">
+                    <div>
+                        <i class='fas fa-paintbrush' style='font-size:36px; color:#E6D8C1'></i>
+                        <p class="LittleText" id="program">Slikanje</p> 
+                        <p class="LittleText" id="LittleTextProgram"> Od prve linije do sopstvenog stila — tehnike crtanja, slikanja i ilustracije.</p>
+                        <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('podsekcija-4', this)">Više informacija →</button>
+                    </div>
+                </div>
+
+                <div class="Podsekcija" id="podsekcija-4">
+                    <details>
+                        <summary>Podsekcija 1</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>
+                    <details>
+                        <summary>Podsekcija 2</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>
+                    <details>
+                        <summary>Podsekcija 3</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>                
+                    <details>
+                        <summary>Podsekcija 4</summary>
+                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                    </details>
+                </div>
+            </div>   
         </div>
     </section>
+
+    <section class="TextPart" id="kontakt">
+        
+        <div class="Texts">
+            <h1>Kontakt</h1>
+            <p class="DarkerText">Imate pitanja o našim programima ili želite da se upišete?<br> Kontaktirajte nas!</p>
+        </div>
+     
+    </section>
+
+    <section class="banner" id="BannerKontakt">
+        <div class="introduction">
+            <img src="Images/MainSlika.jpg" alt="slika">
+            <div class="introduction_Text">
+                <p class="LittleText">Kreatopolis</p>
+                <h1>Ime Prezime: </h1>
+                <p>broj telefona:</p>
+                <p>e-mail:</p>
+                <p>instagram:</p>
+                <p>tik tok:</p>
+                <p>Adresa: </p>
+                <button id="MapButton"><a href="https://maps.app.goo.gl/iFBnrJBkUir6PzRH7">Otvorite mapu</a></button>
+            </div>
+        </div>
+    </section>
+
+
+    
     <script src="JS/script.js"></script>
 </body>
 
