@@ -1,3 +1,5 @@
+
+
 const DURATION = 600;
 const STAGGER  = 120;
 const OFFSET   = 0.13;
@@ -89,7 +91,7 @@ function izrolaj(id, btn) {
   const program    = btn.closest('.Program');
   podsekcija.classList.toggle('open');
   program.classList.toggle('open');
-  btn.textContent = podsekcija.classList.contains('open') ? '- Zatvori' : '+ Više informacija';
+  btn.textContent = podsekcija.classList.contains('open') ? 'Zatvori' : 'Više informacija →';
 }
 
 if (document.readyState === 'loading') {
@@ -107,3 +109,31 @@ if (document.readyState === 'loading') {
     document.getElementById('navLinks').classList.toggle('open');
   });
 }
+
+
+const statNums = document.querySelectorAll('.ink_num');
+
+  const animateCount = (el) => {
+    const target = parseInt(el.dataset.count, 10) || 0;
+    const duration = 1400;
+    const start = performance.now();
+
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => animateCount(entry.target), 100);
+        statObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statNums.forEach(el => statObserver.observe(el));
