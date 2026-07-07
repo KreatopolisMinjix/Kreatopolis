@@ -8,7 +8,7 @@ const TARGETS = [
   ['p',                    'fadeUp'    ],
   ['img',                  'pop'       ],
   ['.Texts',               'fadeUp'    ],
-  ['.Program',             'pop'       ],
+  ['.Program',             'fadeUp'    ],
   ['.ProgramIntroduction', 'fadeUp'    ],
   ['.introduction_Text',   'fadeUp'    ],
   ['.Stat',                'pop'       ],
