@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap');
 
-/* =========================
-   TOKENS — deep pine + warm parchment + mustard gold + coral spark
-   ========================= */
+
 :root{
     --backgroundcolor: #F5EFE1;
     --backgroundcolor2: #ECE1C7;
@@ -17,6 +15,7 @@
 
     --navy: #142B26;
     --navy-2: #1E3C34;
+    --randomcolor: #07ffbd;
 
     --bright-light: #295046;
 
