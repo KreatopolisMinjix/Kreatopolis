@@ -334,9 +334,15 @@ var(--navy-2)
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     margin-bottom: 100px;
     gap: 120px;
+}
+
+@media (max-width: 1400px){
+    .ProgramiSekcije{
+        flex-direction:column;
+    }
 }
 
 .introduction{
@@ -618,11 +624,6 @@ footer{
     padding: 15px 15px;
 }
 
-.izrolaj:active{
-    .Program{
-        border-radius: 25px 25px 0px 0px;
-    }
-}
 
 details summary {
     cursor: pointer;
