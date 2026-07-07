@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,7 +47,7 @@
       Kreatopolis je mesto gde deca i odrasli uče pevanje, gitaru, klavir i crtanje
       u malim grupama, uz mentore koji vole ono što rade.
     </p>
-    <div class="hero__actions">
+    <div class="hero__actions reveal">
       <a href="#programi" class="btn btn--gold">Pogledaj programe</a>
       <a href="#kontakt" class="btn btn--ghost">Zakaži čas</a>
     </div>
@@ -61,8 +61,8 @@
 
     <section class="banner" id="ONama">
         <div class="introduction">
-            <img src="Images/MainSlika.jpg" alt="slika">
-            <div class="introduction_Text">
+            <img src="Images/MainSlika.jpg" alt="slika" class="reveal">
+            <div class="introduction_Text reveal">
                 <p class="LittleText">O Nama</p>
                 <h1>Kreatopolis</h1>
                 <p>Verujemo da svako nosi u sebi neku vrstu talenta — samo mu treba prostor,
@@ -72,25 +72,26 @@
                 najbolje uči kroz igru, ponavljanje i zajedničko stvaranje.</p>
                 <div class="StatHolder">
                     <div class="Stat">
-                        <span class="ink" data-count="8"><h1>2+</h1></span>
+                        <span class="ink" data-count="2"><h1>2+</h1></span>
                         <p>Godine <br> iskustva </p>            
                     </div>
                     <div class="Stat">
-                        <span class="ink"><h1>200+</h1></span>
+                        <span class="ink" data-count="200"><h1>200+</h1></span>
                         <p>Upisanih</p>
                     </div>
                     <div class="Stat">
-                        <span class="ink"><h1>4+</h1></span>
+                        <span class="ink" data-count="4"><h1>4+</h1></span>
                         <p>Programa</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- objasnjenje programa-->
     <section class="TextPart" id="programi">
         
-        <div class="Texts">
+        <div class="Texts reveal">
             <h1>Programi</h1>
             <p class="DarkerText">Pogledajte neke od programa koja nasa škola nudi!</p>
         </div>
@@ -107,11 +108,11 @@
         </div>-->
 
         <div class="box">
-            <div class="Sekcija">
+            <div class="Sekcija reveal">
 
                 <div class="Program">
                     <div>
-                        <i class="fa fa-microphone" style="font-size:36px;color:#E6D8C1"></i>
+                        <i class="fa fa-microphone ProgramIcon"></i>
                         <p class="LittleText" id="program">Pevanje   </p> 
                         <p class="LittleText" id="LittleTextProgram"> Rad na disanju, sluhu i sceničkom nastupu — od dečjih pesmica do prvog nastupa.</p>
                         <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('podsekcija-1', this)">Više informacija →</button>
@@ -120,29 +121,29 @@
 
                 <div class="Podsekcija" id="podsekcija-1">
                     <details>
-                        <summary>Podsekcija 1</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Za koga je namenjeno</summary>
+                        <p>Program je otvoren za decu od 6 godina, tinejdžere i odrasle — bez obzira na prethodno iskustvo.</p>
                     </details>
                     <details>
-                        <summary>Podsekcija 2</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Šta se uči</summary>
+                        <p>Disanje, intonacija, ritam, rad na repertoaru i priprema za nastupe pred publikom.</p>
                     </details>
                     <details>
-                        <summary>Podsekcija 3</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Format časova</summary>
+                        <p>Male grupe do 6 polaznika, jednom ili dva puta nedeljno, po 60 minuta.</p>
                     </details>                
                     <details>
-                        <summary>Podsekcija 4</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Oprema</summary>
+                        <p>Nije potrebna nikakva prethodna oprema — sve što je potrebno obezbeđuje škola.</p>
                     </details>
                 </div>
             </div>
             
-            <div class="Sekcija">
+            <div class="Sekcija reveal">
 
                 <div class="Program">
                     <div>
-                        <i class='fas fa-guitar' style='font-size:36px; color:#E6D8C1'></i>
+                        <i class='fas fa-guitar ProgramIcon'></i>
                         <p class="LittleText" id="program">Gitara</p> 
                         <p class="LittleText" id="LittleTextProgram"> Od prvog akorda do prve pesme koju sviraš napamet — akustična i električna gitara.</p>
                         <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('podsekcija-2', this)">Više informacija →</button>
@@ -151,30 +152,30 @@
 
                 <div class="Podsekcija" id="podsekcija-2">
                     <details>
-                        <summary>Podsekcija 1</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Za koga je namenjeno</summary>
+                        <p>Deca od 8 godina, tinejdžeri i odrasli, početnici i napredni učenici.</p>
                     </details>
                     <details>
-                        <summary>Podsekcija 2</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Šta se uči</summary>
+                        <p>Akordi, tehnike sviranja, čitanje tablatura i sviranje omiljenih pesama.</p>
                     </details>
                     <details>
-                        <summary>Podsekcija 3</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Format časova</summary>
+                        <p>Individualni ili časovi u paru, 45–60 minuta, jednom nedeljno.</p>
                     </details>                
                     <details>
-                        <summary>Podsekcija 4</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Oprema</summary>
+                        <p>Poželjno je imati sopstvenu gitaru kod kuće za vežbanje; škola obezbeđuje instrumente za čas.</p>
                     </details>
                 </div>
             </div> 
         </div>
         <div class="box">    
-            <div class="Sekcija">
+            <div class="Sekcija reveal">
 
                 <div class="Program">
                     <div>
-                        <i class='fas fa-keyboard' style='font-size:36px; color:#E6D8C1'></i>
+                        <i class='fas fa-keyboard ProgramIcon'></i>
                         <p class="LittleText" id="program">Klavir</p> 
                         <p class="LittleText" id="LittleTextProgram"> Klasika i savremena muzika, notno čitanje i sviranje po sluhu — u sopstvenom tempu.</p>
                         <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('podsekcija-3', this)">Više informacija →</button>
@@ -183,29 +184,29 @@
 
                 <div class="Podsekcija" id="podsekcija-3">
                     <details>
-                        <summary>Podsekcija 1</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Za koga je namenjeno</summary>
+                        <p>Deca od 6 godina i odrasli, bez obzira na muzičko predznanje.</p>
                     </details>
                     <details>
-                        <summary>Podsekcija 2</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Šta se uči</summary>
+                        <p>Notno pismo, tehnika sviranja, teorija muzike i repertoar po izboru polaznika.</p>
                     </details>
                     <details>
-                        <summary>Podsekcija 3</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Format časova</summary>
+                        <p>Individualni časovi, 45 minuta, jednom ili dva puta nedeljno.</p>
                     </details>                
                     <details>
-                        <summary>Podsekcija 4</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Oprema</summary>
+                        <p>Klavijatura ili klavir kod kuće se preporučuje, ali nije obavezna za početak.</p>
                     </details>
                 </div>
             </div>   
 
-            <div class="Sekcija">
+            <div class="Sekcija reveal">
 
                 <div class="Program">
                     <div>
-                        <i class='fas fa-paintbrush' style='font-size:36px; color:#E6D8C1'></i>
+                        <i class='fas fa-paintbrush ProgramIcon'></i>
                         <p class="LittleText" id="program">Slikanje</p> 
                         <p class="LittleText" id="LittleTextProgram"> Od prve linije do sopstvenog stila — tehnike crtanja, slikanja i ilustracije.</p>
                         <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('podsekcija-4', this)">Više informacija →</button>
@@ -214,20 +215,20 @@
 
                 <div class="Podsekcija" id="podsekcija-4">
                     <details>
-                        <summary>Podsekcija 1</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Za koga je namenjeno</summary>
+                        <p>Deca od 5 godina, tinejdžeri i odrasli — svi nivoi predznanja.</p>
                     </details>
                     <details>
-                        <summary>Podsekcija 2</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Šta se uči</summary>
+                        <p>Crtanje, slikanje akrilom i akvarelom, kompozicija, boja i lični likovni izraz.</p>
                     </details>
                     <details>
-                        <summary>Podsekcija 3</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Format časova</summary>
+                        <p>Male grupe do 8 polaznika, 90 minuta, jednom nedeljno.</p>
                     </details>                
                     <details>
-                        <summary>Podsekcija 4</summary>
-                        <p>Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst Tekst tekst</p>
+                        <summary>Oprema</summary>
+                        <p>Sav materijal je uključen u cenu časa — dovoljno je poneti volju za stvaranjem.</p>
                     </details>
                 </div>
             </div>   
@@ -236,7 +237,7 @@
 
     <section class="TextPart" id="kontakt">
         
-        <div class="Texts">
+        <div class="Texts reveal">
             <h1>Kontakt</h1>
             <p class="DarkerText">Imate pitanja o našim programima ili želite da se upišete?<br> Kontaktirajte nas!</p>
         </div>
@@ -245,15 +246,15 @@
 
     <section class="banner" id="BannerKontakt">
         <div class="introduction">
-            <img src="Images/MainSlika.jpg" alt="slika">
-            <div class="introduction_Text">
+            <img src="Images/MainSlika.jpg" alt="slika" class="reveal">
+            <div class="introduction_Text reveal">
                 <p class="LittleText">Kreatopolis</p>
-                <h1>Ime Prezime: </h1>
-                <p>broj telefona:</p>
-                <p>e-mail:</p>
-                <p>instagram:</p>
-                <p>tik tok:</p>
-                <p>Adresa: </p>
+                <p>Ime Prezime: ****** ****** * ***** *****</p>
+                <p>broj telefona: 060 0000 000</p>
+                <p>e-mail: xxxxxx@gmail.com</p>
+                <p>instagram: @xxxxxx</p>
+                <p>tik tok: @xxxxxx</p>
+                <p>Adresa: ******* *****, **, Beograd 11000</p>
                 <button id="MapButton"><a href="https://maps.app.goo.gl/iFBnrJBkUir6PzRH7">Otvorite mapu</a></button>
             </div>
         </div>
@@ -265,8 +266,13 @@
 </body>
 
 <footer>
+    <p class="FooterText">Navigacija</p>
+    <a href="#home">Početna</a>
+    <a href="#ONama">O Nama</a>
+    <a href="#programi">Programi</a>
+    <a href="#kontakt">Kontakt</a>
+    <br>
     <p class="FooterText">Kreatopolis</p>
-    <p class="FooterTextDark">Tekst tekst tekst </p>
     <p class="FooterTextDark">© 2026 Kreatopolis. Sva prava zadržana.</p>
     <p class="FooterTextDark">Uređivač sajt: @minjix.design</p>
 </footer>
