@@ -1,5 +1,3 @@
-
-
 const DURATION = 600;
 const STAGGER  = 120;
 const OFFSET   = 0.13;
