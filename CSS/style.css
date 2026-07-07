@@ -1,54 +1,109 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap');
 
+/* =========================
+   TOKENS — deep pine + warm parchment + mustard gold + coral spark
+   ========================= */
 :root{
---backgroundcolor: #F7F2E9;
---backgroundcolor2: #ECE4D8;
+    --backgroundcolor: #F5EFE1;
+    --backgroundcolor2: #ECE1C7;
 
---DarkestColor: #231A14;
---ContrastColor: #34271E;
+    --DarkestColor: #142B26;
+    --ContrastColor: #1E3C34;
 
---SoftColor_1: #8E8576;
---SoftColor_2: #F7F2E9;
---SoftColor_3: #CFA36A;
---SoftColor_4: #A3917F;
+    --SoftColor_1: #8E8576;
+    --SoftColor_2: #F5EFE1;
+    --SoftColor_3: #D9A441;
+    --SoftColor_4: #A3917F;
 
---navy: #35271E;
---navy-2: #4A382D;
+    --navy: #142B26;
+    --navy-2: #1E3C34;
 
---bright-light: #886755;
+    --bright-light: #295046;
 
---cream:#FAF7F2;
---cream-2:#F1E8DA;
+    --cream: #F5EFE1;
+    --cream-2: #ECE1C7;
 
---gold:#D5A15C;
---gold-light:#ECD4A6;
+    --gold: #D9A441;
+    --gold-light: #F0CE87;
 
---terracotta:#C46C4C;
+    --terracotta: #E4572E;
+    --terracotta-light: #F0916E;
 
---ink:#2C241E;
---ink-soft:#665A50;
+    --ink: #2E3B35;
+    --ink-soft: #5C6C64;
 
---white:#FFFFFF;
+    --white: #FFFFFF;
+
     --font-display: "Fraunces", serif;
-    --font-body: "Karla", sans-serif;
-    --MiniText:10px;
-    --MildText:20px;
-    --MidiText:25px;
-    --BigText:45px;
-    --XLText:75px;
-    --XXLText:100px;
+    --font-body: "Outfit", sans-serif;
+
+    --MiniText: 12px;
+    --MildText: 20px;
+    --MidiText: 25px;
+    --BigText: 45px;
+    --XLText: 75px;
+    --XXLText: 100px;
+
+    --ease: cubic-bezier(.22,.9,.3,1);
+
+    /* how tall the fixed nav is at rest — used for scroll offsets */
+    --nav-height: 75px;
 }
+
+*{ box-sizing: border-box; }
+
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     margin:0;
     background-color: var(--backgroundcolor);
-    font-family: "Fraunces", serif;
-    font-style: italic;
+    font-family: var(--font-body);
+    font-style: normal;
     color: var(--navy);
-    overflow-wrap: break-word; 
+    overflow-x: hidden;
+    overflow-wrap: break-word;
     white-space: normal;
-    
+    line-height: 1.55;
 }
 
+h1{
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.12;
+    margin: 0;
+}
+
+p{ margin: 0 0 1em; }
+
+a{ color: inherit; }
+
+/* every section anchor gets breathing room above it so the fixed nav
+   never clips the top of the content when jumping to it */
+section[id]{
+    scroll-margin-top: var(--nav-height);
+}
+
+/* =========================
+   REVEAL ON SCROLL
+   ========================= */
+.reveal{
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+.reveal.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce){
+    .reveal{ opacity: 1; transform: none; transition: none; }
+}
+
+/* =========================
+   NAV (original structure, tuned so it never clips or overlaps)
+   ========================= */
 nav {
     position: fixed;
     top: 0;
@@ -58,49 +113,42 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background:
 
-    rgba(53,39,30,.78);
+    background: rgba(20,43,38,.75);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    backdrop-filter:
-
-    blur(18px);
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-    padding: 10px 20px;
-    height: 75px;
-    gap: 200px;
+    padding: 10px clamp(16px, 4vw, 40px);
+    height: var(--nav-height);
+    gap: clamp(28px, 8vw, 160px);
     border-bottom: 1px solid var(--bright-light);
 
     z-index: 1000;
+    transition: background .3s ease, box-shadow .3s ease;
 }
 
-.nav.is-scrolled{
-  padding: 12px 0;
-  background: rgba(27,31,46,.92);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 8px 24px -12px rgba(0,0,0,.4);
+nav.is-scrolled{
+    background: rgba(20,43,38,.94);
+    box-shadow: 0 12px 30px -18px rgba(0,0,0,.6);
 }
 
-nav .icon {
-  display: none;
-}
-nav h1
-{
+nav h1{
     color: var(--backgroundcolor);
-    font-size: var(--BigText);
+    font-size: clamp(1.5rem, 3vw, var(--BigText));
+    white-space: nowrap;
 }
 
 nav a{
     position: relative;
-    padding: 20px;
+    padding: 10px 4px;
     text-decoration: none;
     color: var(--backgroundcolor);
-    font-size: var(--MidiText);
+    font-size: clamp(1rem, 1.6vw, var(--MidiText));
+    white-space: nowrap;
 }
 
 nav a:hover {
-  color: var(--SoftColor_2);
+  color: var(--gold-light);
 }
 
 nav a:not(.activelinkindex):before {
@@ -109,9 +157,9 @@ nav a:not(.activelinkindex):before {
   display: block;
   width: 100%;
   height: 2px;
-  bottom: 8px;
+  bottom: 4px;
   left: 0;
-  background-color: var(--SoftColor_2);
+  background-color: var(--gold);
   transform: scaleX(0);
   transform-origin: top left;
   transition: transform 0.3s ease;
@@ -121,51 +169,22 @@ nav a:hover::before {
   transform: scaleX(1);
 }
 
-
 /* =========================
-   HERO SECTION (ALL CSS)
+   HERO
    ========================= */
 
 .hero{
   position:relative;
-  min-height: 100vh;
+  min-height: 100svh;
   display:flex;
   align-items:center;
-background:
-
-linear-gradient(
-180deg,
-var(--DarkestColor),
-var(--navy)
-70%,
-var(--navy-2)
-100%
-);
+  background: radial-gradient(circle at 15% 20%, rgba(213,161,92,.10), transparent 35%),
+              radial-gradient(circle at 85% 70%, rgba(228,87,46,.12), transparent 40%),
+              linear-gradient(180deg, var(--DarkestColor), var(--navy) 70%, var(--navy-2) 100%);
   overflow:hidden;
-  padding: 140px 24px 100px;
-}
-.hero::before{
-
-content:"";
-
-position:absolute;
-inset:0;
-
-background:
-
-radial-gradient(circle at 15% 20%,
-rgba(213,161,92,.08),
-transparent 30%),
-
-radial-gradient(circle at 85% 70%,
-rgba(196,108,76,.10),
-transparent 35%);
-
-pointer-events:none;
-
+  padding: calc(var(--nav-height) + 60px) 24px 100px;
 }
 
-/* Floating notes wrapper */
 .hero__notes{
   position:absolute;
   inset:0;
@@ -173,14 +192,12 @@ pointer-events:none;
   color: rgba(217,167,92,.18);
 }
 
-/* Base note style */
 .note{
   position:absolute;
   width: 70px;
   height:70px;
 }
 
-/* Individual notes */
 .note--1{
   top: 18%;
   left: 8%;
@@ -204,13 +221,11 @@ pointer-events:none;
   animation-delay: 1.2s;
 }
 
-/* Float animation */
 @keyframes float{
   0%,100%{ transform: translateY(0) rotate(0deg); }
   50%{ transform: translateY(-22px) rotate(6deg); }
 }
 
-/* Hero content wrapper */
 .hero__inner{
   position:relative;
   max-width: 760px;
@@ -218,22 +233,20 @@ pointer-events:none;
   text-align:center;
 }
 
-/* Title */
 .hero__title{
   color: var(--cream);
-  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
   font-weight:500;
+  margin-bottom: .6em;
 }
 
-/* Subtitle */
 .hero__sub{
-  color: rgba(247,242,233,.78);
-  font-size: 1.1rem;
+  color: rgba(245,239,225,.78);
+  font-size: clamp(1rem, 2vw, 1.15rem);
   max-width: 540px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.2rem;
 }
 
-/* Buttons wrapper */
 .hero__actions{
   display:flex;
   gap: 1rem;
@@ -241,7 +254,6 @@ pointer-events:none;
   flex-wrap:wrap;
 }
 
-/* Wave divider */
 .wave-divider{
   position:absolute;
   bottom:-2px;
@@ -254,10 +266,14 @@ pointer-events:none;
   fill:var(--cream);
 }
 
-/* Optional helper styles used in hero */
 .eyebrow{
-  font-size:.75rem;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .8rem;
+  font-weight: 600;
   color: var(--terracotta);
+  margin-bottom: .8em;
 }
 
 .ink{
@@ -265,241 +281,261 @@ pointer-events:none;
   color: var(--terracotta);
 }
 
-.ink_num{
-  font-style: italic;
-  color: var(--terracotta);
+/* =========================
+   BUTTONS
+   ========================= */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 12px 28px;
+  transition: transform .25s var(--ease), background .25s ease, color .25s ease, border-color .25s ease;
 }
 
-/* Reveal animation used in hero text */
-.reveal{
-  opacity:0;
-  transform: translateY(24px);
-  transition: opacity .7s var(--ease), transform .7s var(--ease);
+.btn--gold{
+  color: var(--DarkestColor);
+  background: var(--gold);
+  border: 2px solid var(--gold);
+}
+.btn--gold:hover{
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+}
+.btn--gold:active{
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: var(--white);
 }
 
+.btn--ghost{
+  color: var(--cream);
+  background: transparent;
+  border: 2px solid rgba(245,239,225,.45);
+}
+.btn--ghost:hover{
+  border-color: var(--gold);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
 
+/* =========================
+   TEXT / DIVIDER SECTIONS
+   ========================= */
 .TextPart {
-    min-height: 20vh;
+    min-height: 26vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    padding: 100px 24px 100px;
     background-color: var(--navy);
     color: var(--backgroundcolor);
-background-image:
-
-linear-gradient(
-180deg,
-var(--DarkestColor),
-var(--navy)
-70%,
-var(--navy-2)
-100%
-);
+    background-image: linear-gradient(180deg, var(--DarkestColor), var(--navy) 70%, var(--navy-2) 100%);
 }
 
-#kontakt{
-    min-height: 10vh;
-    
-}
-.TextPart2 {
-    min-height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 70px;
-    
-}
-
-
-
-.banner{
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#BannerKontakt
-{
-    min-height: 80vh;
-    border-top: none;
-    border-bottom: none;
-}
-
-.ProgramiSekcije{
-    min-height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-bottom: 100px;
-    gap: 120px;
-}
-
-@media (max-width: 1400px){
-    .ProgramiSekcije{
-        flex-direction:column;
-    }
-}
-
-.introduction{
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-}
-
-.introduction img{
-    width: 800px;
-    height: 800px;
-    border-radius:32px;
-    overflow:hidden;
-    box-shadow:0 30px 80px rgba(0,0,0,.12);
-}
-
-.LittleText{
-    color: var(--SoftColor_2);
-    font-size: var(--MildText);
-}
-
-.introduction_Text{
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    overflow-wrap: break-word; 
-    white-space: normal;
-}
-
-.StatHolder{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-}
-
-.Stat{
-    display: flex;
-    flex-direction: column;  
-}
-.Stat h1{
-    margin-bottom: -10px;
-    
-}
-.Stat p{
-    font-style: normal;
-}
-
-
-
-.Texts{
+.Texts {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: min(1000px, 90%);
     text-align: center;
-    
 }
 
 .Texts h1{
-    font-size: var(--XXLText);
-    overflow-wrap: break-word; 
+    font-size: clamp(2.2rem, 6vw, var(--XXLText));
+    color: var(--backgroundcolor);
+    margin-bottom: .5em;
+    overflow-wrap: break-word;
     white-space: normal;
 }
 
-#DefaultButtonStyle{
-    margin-top: 50px;
-    background-color: var(--ContrastColor);
-    border-radius: 25px;
+.DarkerText{
+    color: rgba(245,239,225,.72);
+    font-size: 1.05rem;
+}
+
+/* =========================
+   BANNER / O NAMA / KONTAKT
+   ========================= */
+.banner{
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 24px;
+    background-color: var(--backgroundcolor);
+}
+
+#BannerKontakt{
+    min-height: 80vh;
+    background-color: var(--backgroundcolor2);
+    border-top: none;
+    border-bottom: none;
+}
+
+.introduction{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.introduction img{
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: cover;
+    border-radius: 28px;
+    box-shadow: 0 30px 80px rgba(20,27,23,.25);
+    flex-shrink: 0;
+}
+
+.LittleText{
+    color: var(--terracotta);
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 600;
+    font-size: .85rem;
+}
+
+.introduction_Text{
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.introduction_Text h1{
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    margin-bottom: .5em;
+    color: var(--navy);
+}
+
+.introduction_Text p{
+    color: var(--ink-soft);
+}
+
+.StatHolder{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.Stat{
+    display: flex;
+    flex-direction: column;
+}
+.Stat h1{
+    margin-bottom: -6px;
+    font-size: 2.4rem;
+    color: var(--terracotta);
+}
+.Stat p{
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin: 0;
+}
+
+#MapButton{
+    margin-top: 30px;
+    background-color: var(--navy);
+    border-radius: 999px;
     width: 200px;
     height: 50px;
     justify-self: center;
+    transition: background .25s ease, transform .25s var(--ease);
 }
 
-#DefaultButtonStyle a{
+#MapButton a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
     text-decoration: none;
     color: var(--backgroundcolor);
+    font-family: var(--font-body);
+    font-weight: 600;
 }
 
-#DefaultButtonStyle:hover{
-    background-color: var(--SoftColor_2);
+#MapButton:hover{
+    background-color: var(--terracotta);
+    transform: translateY(-2px);
 }
-
 
 @media (max-width: 1100px){
-    .introduction img{
-        align-self: center;
-        width: 350px;
-        height: 350px;
-        border-radius: 25px;
-    }
-    .Texts h1{
-        font-size: var(--BigText);
-    }
     .introduction{
         flex-direction: column;
+        text-align: center;
     }
-    .TextPart{
-        margin-bottom: 50px;
+    .introduction img{
+        max-width: 380px;
+    }
+    .introduction_Text{
+        align-items: center;
+        max-width: 90vw;
     }
     .StatHolder{
         justify-content: center;
         text-align: center;
     }
-    
+    .TextPart{
+        padding: 80px 24px 60px;
+    }
 }
 
+/* =========================
+   FOOTER
+   ========================= */
 footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    line-height: .2;
-    margin-bottom: 20px;
+    gap: 6px;
+    padding: 30px 24px 24px;
+    margin-top: 0;
     border-top: 1px solid var(--SoftColor_4);
+    background-color: var(--backgroundcolor);
+    text-align: center;
 }
 
 .FooterText{
-    color: var(--SoftColor_2);
+    font-family: var(--font-display);
+    color: var(--navy);
     font-size: var(--MildText);
 }
 .FooterTextDark{
-    color: var(--ContrastColor);
+    color: var(--ink-soft);
     font-size: var(--MiniText);
+    margin: 0;
 }
 
-
-@media (max-width: 1100px) {
-    nav {
-        justify-content: space-between; 
-        gap: 0;
-    }
-
-    nav a.activelinkindex {
-        order: 1;
-        padding: 0;        
-        display: flex;     
-        align-items: center;
-    }
-
-    nav h1 {
-        font-size: 35px; 
-        margin: 0;
-    }
-}
-
-
-
-/*Burger padajuci meni za telefone*/
-
-
+/* =========================
+   BURGER / MOBILE NAV
+   ========================= */
 .burger {
     display: none;
     background: none;
     border: none;
     font-size: 30px;
+    line-height: 1;
     cursor: pointer;
     color: var(--backgroundcolor);
     margin: 0;
@@ -513,14 +549,13 @@ footer{
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 96px;
+    top: var(--nav-height);
     left: 0;
     width: 100%;
     background-color: var(--navy-2);
     border-bottom: 1px solid var(--SoftColor_4);
-    z-index: 100;
+    z-index: 999;
     padding: 10px 0;
-    
 }
 
 .nav-links-mobile.open {
@@ -532,23 +567,62 @@ footer{
     font-size: var(--MildText);
     text-decoration: none;
     color: var(--backgroundcolor);
+    border-left: 3px solid transparent;
+    transition: border-color .2s ease, background .2s ease;
+}
+
+.nav-links-mobile a:hover{
+    border-left-color: var(--gold);
+    background: rgba(245,239,225,.05);
 }
 
 @media (max-width: 1100px) {
-    nav a:not(.activelinkindex) {
+    nav {
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    nav a.activelinkindex {
+        order: 1;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    nav a:not(.activelinkindex){
         display: none;
     }
 
     .burger {
         display: block;
-        order: 1;
-        margin-right: 40px;
+        order: 2;
     }
     nav .activelinkindex {
         order: 0;
     }
+}
 
+/* =========================
+   PROGRAMI
+   ========================= */
+.ProgramiSekcije{
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 150px 24px 100px;
+    gap: 60px;
+    background-color: var(--backgroundcolor);
+}
 
+.box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
 }
 
 .Sekcija{
@@ -557,63 +631,96 @@ footer{
 }
 
 .Program {
-    width: 400px;
+    width: min(400px, 88vw);
     max-width: 400px;
-    height: 295px;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    transition: border-radius 0.3s ease;
-    background-color: var(--navy);
-    text-align: left;
-
-    background-image:linear-gradient(
-    180deg,
-    var(--DarkestColor),
-    var(--navy)
-    70%,
-    var(--navy-2)
-    100%);
-    
+    background-color: var(--white);
+    box-shadow: 0 18px 40px -22px rgba(20,43,38,.3);
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-radius .3s ease;
 }
 
-
-
-
-#Mikrofon{
-    width: 25px;
-    height: 30px;
-    color: var(--backgroundcolor);
+.Program:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 26px 46px -20px rgba(20,43,38,.35);
 }
 
 .Program div{
     display: flex;
     flex-direction: column;
-    padding: 30px;
-    gap: 0px;
+    padding: 32px;
+    gap: 6px;
 }
 
 .Program.open {
-    border-radius: 25px 25px 0px 0px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.ProgramIcon{
+    font-size: 32px !important;
+    color: var(--terracotta) !important;
+    margin-bottom: 6px;
+}
+
+#program{
+    font-family: var(--font-display);
+    font-size: var(--MidiText);
+    font-weight: 600;
+    color: var(--navy);
+    align-items: left;
+    justify-self: left;
+    text-align: left;
+}
+
+#LittleTextProgram{
+    font-size: 15px;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    align-items: left;
+    justify-self: left;
+    text-align: left;
+    color: var(--ink-soft);
+}
+
+#ViseInformacija{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    justify-self: bottom;
+    align-self: left;
+    color: var(--terracotta);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--MildText);
+    cursor: pointer;
+    padding: 0;
+    transition: color .25s ease;
+}
+
+#ViseInformacija:hover{
+    color: var(--gold);
 }
 
 .Podsekcija{
-    width: 400px;
+    width: min(400px, 88vw);
     max-width: 400px;
-    background-color: var(--navy-2);
-    border-radius: 0px 0px 25px 25px;
-    display: none;
+    background-color: var(--backgroundcolor2);
+    border-radius: 0px 0px 20px 20px;
     overflow: hidden;
     justify-content: left;
     align-items: left;
     flex-direction: column;
-    gap: 30px;
-        display: flex;
+    display: flex;
     opacity: 0;
     max-height: 0;
     transition: opacity 0.4s ease, max-height 0.4s ease;
-    color: var(--backgroundcolor);
-
+    color: var(--navy);
 }
 .Podsekcija.open {
     opacity: 1;
@@ -621,20 +728,27 @@ footer{
 }
 
 .Podsekcija details{
-    padding: 15px 15px;
+    padding: 14px 20px;
+    border-top: 1px dashed var(--SoftColor_4);
 }
-
+.Podsekcija details:first-child{
+    border-top: none;
+}
 
 details summary {
     cursor: pointer;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
 details[open] summary {
-    color: var(--SoftColor_2);
+    color: var(--terracotta);
 }
 
 details p {
+    margin: .5em 0 0;
+    font-size: .94rem;
+    color: var(--ink-soft);
     animation: slideDown 0.3s ease;
 }
 
@@ -643,84 +757,22 @@ details p {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-
-.animate {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.animate.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.box{
-    display: flex;
-    flex-direction: row;
-    gap: 120px;
-
-}
-
-#program{
-    align-items: left;
-    justify-self: left;
-    text-align: left;
-    font-size: var(--MidiText);
-    color: var(--backgroundcolor);
-
-}
-
-#LittleTextProgram{
-    font-size: 15px;
-    align-items: left;
-    justify-self: left;
-    text-align: left;
-    color: var(--backgroundcolor2);
-}
-
-#ViseInformacija{
-    display: flex;
-    background: none;
-    border:none;
-    width: 400px;
-    height: 75px;
-    justify-self: bottom;
-    align-self: left;
-    color: var(--backgroundcolor);
-    font-size: var(--MildText);
-    display: inline-flex;
-    align-items: center;  
-    justify-content: left;
-}
-
 .ProgramIntroduction
 {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     border-top: 1px dashed var(--SoftColor_4);
     border-bottom: 1px dashed var(--SoftColor_4);
 }
 
 @media (max-width: 1100px) {
+    .ProgramiSekcije{
+        padding: 80px 20px 80px;
+        gap: 40px;
+    }
     .box{
-        flex-direction: column;
-        align-items: center;
-    }
-    .Sekcija {
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .Program {
-        width: 90vw;
-        height: 295px;
-    }
-
-    .Podsekcija {
-        width: 90vw;
-        max-width: 90vw;
+        gap: 40px;
     }
     #DescriptionText{
         text-align: center;
@@ -728,52 +780,15 @@ details p {
     .ProgramIntroduction{
         width: 90vw;
     }
-    #ViseInformacija {
+}
+
+@media (max-width: 460px){
+    .Program, .Podsekcija{
         width: 100%;
-        
     }
 }
 
-#MapButton{
-    margin-top: 30px;
-    background-color: var(--navy);
-    border-radius: 25px;
-    width: 200px;
-    height: 50px;
-    justify-self: center;
-    margin-bottom: 30px;
-    
-}
-
-#MapButton a{
-    text-decoration: none;
-    color: var(--backgroundcolor);
-}
-
-#MapButton:hover{
-    background-color: var(--bright-light);
-}
-
 .hero__actions a{
-    color: var(--terracotta);
     text-decoration: none;
-    border: 2px solid var(--terracotta);
-    border-radius: 30px;
-    padding: 10px;
 }
 
-.hero__actions a:hover{
-    color: var(--gold);
-    text-decoration: none;
-    border: 2px solid var(--gold);
-    border-radius: 30px;
-    padding: 10px; 
-}
-
-.hero__actions a:active{
-    color: var(--white);
-    text-decoration: none;
-    border: 2px solid var(--white);
-    border-radius: 30px;
-    padding: 10px; 
-}
