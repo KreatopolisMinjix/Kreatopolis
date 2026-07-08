@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
     --backgroundcolor: #F5EFE1;
     --backgroundcolor2: #ECE1C7;
 
-    --DarkestColor: #2b142a;
-    --ContrastColor: #391e3c;
+    --DarkestColor: #ffffff;
+    --ContrastColor: #ffffff;
 
     --SoftColor_1: #8E8576;
     --SoftColor_2: #F5EFE1;
     --SoftColor_3: #D9A441;
     --SoftColor_4: #A3917F;
 
-    --navy: #2b142b;
-    --navy-2: #3c1e32;
+    --navy: #ffffff;
+    --navy-2: #ffffff;
     --randomcolor: #07ffbd;
 
-    --bright-light: #482950;
+    --bright-light: #ffffff;
 
     --cream: #F5EFE1;
     --cream-2: #ECE1C7;
@@ -25,7 +25,7 @@
     --gold: #D9A441;
     --gold-light: #F0CE87;
 
-    --terracotta: #E4572E;
+    --terracotta: rgb(100, 16, 93);
     --terracotta-light: #F0916E;
 
     --ink: #382e3b;
@@ -60,7 +60,7 @@ body{
     background-color: var(--backgroundcolor);
     font-family: var(--font-body);
     font-style: normal;
-    color: var(--navy);
+    color: black;
     overflow-x: hidden;
     overflow-wrap: break-word;
     white-space: normal;
@@ -72,6 +72,7 @@ h1{
     font-weight: 600;
     line-height: 1.12;
     margin: 0;
+    color: rgb(37, 37, 37);
 }
 
 p{ margin: 0 0 1em; }
@@ -113,7 +114,7 @@ nav {
     align-items: center;
     justify-content: center;
 
-    background: rgba(43, 20, 36, 0.75);
+    background: rgba(100, 16, 93, 0.753);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
@@ -233,14 +234,14 @@ nav a:hover::before {
 }
 
 .hero__title{
-  color: var(--cream);
+  color: rgb(37, 37, 37);
   font-size: clamp(2.2rem, 6vw, 4.2rem);
   font-weight:500;
   margin-bottom: .6em;
 }
 
 .hero__sub{
-  color: rgba(245,239,225,.78);
+  color: rgb(59, 59, 59);
   font-size: clamp(1rem, 2vw, 1.15rem);
   max-width: 540px;
   margin: 0 auto 2.2rem;
@@ -347,14 +348,14 @@ nav a:hover::before {
 
 .Texts h1{
     font-size: clamp(2.2rem, 6vw, var(--XXLText));
-    color: var(--backgroundcolor);
+    color: rgb(37,37,37);
     margin-bottom: .5em;
     overflow-wrap: break-word;
     white-space: normal;
 }
 
 .DarkerText{
-    color: rgba(245,239,225,.72);
+    color: rgba(37,37,37,.72);
     font-size: 1.05rem;
 }
 
@@ -468,7 +469,7 @@ nav a:hover::before {
     width: 100%;
     height: 100%;
     text-decoration: none;
-    color: var(--backgroundcolor);
+    color: rgb(37, 37, 37);
     font-family: var(--font-body);
     font-weight: 600;
 }
@@ -680,7 +681,7 @@ footer{
     font-family: var(--font-display);
     font-size: var(--MidiText);
     font-weight: 600;
-    color: var(--navy);
+    color: rgb(37,37,37);
     align-items: left;
     justify-self: left;
     text-align: left;
@@ -804,3 +805,4 @@ details p {
 .hero__actions a{
     text-decoration: none;
 }
+
