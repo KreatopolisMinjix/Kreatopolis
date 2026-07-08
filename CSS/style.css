@@ -3,14 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 :root{
-    --backgroundcolor: #F5EFE1;
-    --backgroundcolor2: #ECE1C7;
+    --backgroundcolor: #ffff;
+    --backgroundcolor2: #ffff;
 
     --DarkestColor: #ffffff;
     --ContrastColor: #ffffff;
 
     --SoftColor_1: #8E8576;
-    --SoftColor_2: #F5EFE1;
+    --SoftColor_2: #ffffff;
     --SoftColor_3: #D9A441;
     --SoftColor_4: #A3917F;
 
@@ -20,13 +20,13 @@
 
     --bright-light: #ffffff;
 
-    --cream: #F5EFE1;
-    --cream-2: #ECE1C7;
+    --cream: #ffffff;
+    --cream-2: #ffffff;
 
     --gold: #D9A441;
-    --gold-light: #F0CE87;
+    --gold-light: #ffffff;
 
-    --terracotta: rgb(90, 23, 86);
+    --terracotta: #D9A441;
     --terracotta-light: #F0916E;
 
     --ink: #382e3b;
@@ -34,8 +34,8 @@
 
     --white: #FFFFFF;
 
-    --font-display: "Noto+Sans+TC", serif;
-    --font-body: "Noto+Sans+TC", sans-serif;
+    --font-display: "Poppins", serif;
+    --font-body: "Poppins", sans-serif;
 
     --MiniText: 12px;
     --MildText: 20px;
