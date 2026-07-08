@@ -560,6 +560,18 @@ footer{
 .nav-links-mobile.open {
     display: flex;
 }
+.mainimage{
+    margin-top: 45px;
+    scale: .8;
+}
+@media (max-width:1100px){
+    .mainimage{
+        margin-left: -180px;
+        scale: .5;
+        margin-top: 20px;
+    }
+
+}
 
 .nav-links-mobile a {
     padding: 15px 25px;
@@ -586,6 +598,7 @@ footer{
         padding: 0;
         display: flex;
         align-items: center;
+        
     }
 
     nav a:not(.activelinkindex){
@@ -595,6 +608,7 @@ footer{
     .burger {
         display: block;
         order: 2;
+       
     }
     nav .activelinkindex {
         order: 0;
