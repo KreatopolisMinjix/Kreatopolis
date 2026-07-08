@@ -5,6 +5,7 @@
 :root{
     --backgroundcolor: #ffff;
     --backgroundcolor2: #ffff;
+    --backgroundcolor3: rgba(224, 206, 222, 0.425);
 
     --DarkestColor: #ffffff;
     --ContrastColor: #ffffff;
@@ -35,7 +36,7 @@
     --white: #FFFFFF;
 
     --font-display: "Poppins", serif;
-    --font-body: "Poppins", sans-serif;
+    --font-body: "Poppins", serif;
 
     --MiniText: 12px;
     --MildText: 20px;
@@ -179,9 +180,7 @@ nav a:hover::before {
   min-height: 100svh;
   display:flex;
   align-items:center;
-  background: radial-gradient(circle at 15% 20%, rgba(213,161,92,.10), transparent 35%),
-              radial-gradient(circle at 85% 70%, rgba(228,87,46,.12), transparent 40%),
-              linear-gradient(180deg, var(--DarkestColor), var(--navy) 70%, var(--navy-2) 100%);
+  background-color: white;
   overflow:hidden;
   padding: calc(var(--nav-height) + 60px) 24px 100px;
 }
@@ -242,7 +241,7 @@ nav a:hover::before {
 }
 
 .hero__sub{
-  color: rgb(59, 59, 59);
+  color: black;
   font-size: clamp(1rem, 2vw, 1.15rem);
   max-width: 540px;
   margin: 0 auto 2.2rem;
@@ -369,12 +368,12 @@ nav a:hover::before {
     justify-content: center;
     align-items: center;
     padding: 90px 24px;
-    background-color: var(--backgroundcolor);
+    background-color: var(--backgroundcolor3);
 }
 
 #BannerKontakt{
     min-height: 80vh;
-    background-color: var(--backgroundcolor2);
+    background-color: var(--backgroundcolor3);
     border-top: none;
     border-bottom: none;
 }
@@ -629,7 +628,7 @@ footer{
     flex-direction: row;
     padding: 150px 24px 100px;
     gap: 60px;
-    background-color: var(--backgroundcolor);
+    background-color: var(--backgroundcolor3);
 }
 
 .box{
