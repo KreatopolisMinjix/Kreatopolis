@@ -3,38 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 :root{
-    --backgroundcolor: #ffff;
-    --backgroundcolor2: #ffff;
-    --backgroundcolor3: rgba(224, 206, 222, 0.425);
-
-    --DarkestColor: #ffffff;
-    --ContrastColor: #ffffff;
-
-    --SoftColor_1: #8E8576;
-    --SoftColor_2: #ffffff;
-    --SoftColor_3: #D9A441;
-    --SoftColor_4: #A3917F;
-
-    --navy: #ffffff;
-    --navy-2: #ffffff;
-    --randomcolor: #07ffbd;
-
-    --bright-light: #ffffff;
-
-    --cream: #ffffff;
-    --cream-2: #ffffff;
-
-    --gold: #D9A441;
-    --gold-light: #ffffff;
-
-    --terracotta: #D9A441;
-    --terracotta-light: #F0916E;
-
-    --ink: #382e3b;
-    --ink-soft: #6c5c6c;
-
-    --white: #FFFFFF;
-
+    --PrimaryColor: #ffffff;
+    --SecondaryColor: rgba(224, 206, 222, 0.425);
+    --HighlightColor: #D9A441;
+    --BorderColor: #A3917F;
+    --TextColor1: #6c5c6c;
+    --NavColor:rgba(43, 17, 43, 0.753);
+    --NavColorAlphaFull:rgba(43, 17, 43, 1);
     --font-display: "Poppins", serif;
     --font-body: "Poppins", serif;
 
@@ -59,7 +34,7 @@ html{
 
 body{
     margin:0;
-    background-color: var(--backgroundcolor);
+    background-color: var(--PrimaryColor);
     font-family: var(--font-body);
     font-style: normal;
     color: black;
@@ -116,14 +91,14 @@ nav {
     align-items: center;
     justify-content: center;
 
-    background: rgba(43, 17, 43, 0.753);
+    background: var(--NavColor);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
     padding: 10px clamp(16px, 4vw, 40px);
     height: var(--nav-height);
     gap: clamp(28px, 8vw, 160px);
-    border-bottom: 1px solid var(--bright-light);
+    border-bottom: 1px solid var(--PrimaryColor);
 
     z-index: 1000;
     transition: background .3s ease, box-shadow .3s ease;
@@ -135,7 +110,7 @@ nav.is-scrolled{
 }
 
 nav h1{
-    color: var(--backgroundcolor);
+    color: var(--PrimaryColor);
     font-size: clamp(1.5rem, 3vw, var(--BigText));
     white-space: nowrap;
 }
@@ -144,13 +119,13 @@ nav a{
     position: relative;
     padding: 10px 4px;
     text-decoration: none;
-    color: var(--backgroundcolor);
+    color: var(--PrimaryColor);
     font-size: clamp(1rem, 1.6vw, var(--MidiText));
     white-space: nowrap;
 }
 
 nav a:hover {
-  color: var(--gold-light);
+  color: var(--PrimaryColor);
 }
 
 nav a:not(.activelinkindex):before {
@@ -161,7 +136,7 @@ nav a:not(.activelinkindex):before {
   height: 2px;
   bottom: 4px;
   left: 0;
-  background-color: var(--gold);
+  background-color: var(--HighlightColor);
   transform: scaleX(0);
   transform-origin: top left;
   transition: transform 0.3s ease;
@@ -180,7 +155,7 @@ nav a:hover::before {
   min-height: 100svh;
   display:flex;
   align-items:center;
-  background-color: white;
+  background-color: var(--PrimaryColor);
   overflow:hidden;
   padding: calc(var(--nav-height) + 60px) 24px 100px;
 }
@@ -263,7 +238,14 @@ nav a:hover::before {
 }
 
 .wave-divider path{
-  fill:var(--cream);
+    fill:var(--PrimaryColor);
+}
+
+
+@media (max-width:1100px){
+    .wave-divider path{
+        fill:var(--SecondaryColor);
+    }
 }
 
 .eyebrow{
@@ -272,13 +254,13 @@ nav a:hover::before {
   letter-spacing: .12em;
   font-size: .8rem;
   font-weight: 600;
-  color: var(--terracotta);
+  color: var(--HighlightColor);
   margin-bottom: .8em;
 }
 
 .ink{
   font-style: italic;
-  color: var(--terracotta);
+  color: var(--HighlightColor);
 }
 
 /* =========================
@@ -297,29 +279,25 @@ nav a:hover::before {
 }
 
 .btn--gold{
-  color: var(--DarkestColor);
-  background: var(--gold);
-  border: 2px solid var(--gold);
+  color: var(--PrimaryColor);
+  background: var(--HighlightColor);
+  border: 2px solid var(--HighlightColor);
 }
 .btn--gold:hover{
-  background: var(--gold-light);
-  border-color: var(--gold-light);
+  background: var(--BorderColor);
+  border-color: var(--BorderColor);
   transform: translateY(-2px);
 }
-.btn--gold:active{
-  background: var(--terracotta);
-  border-color: var(--terracotta);
-  color: var(--white);
-}
+
 
 .btn--ghost{
-  color: var(--cream);
+  color: var(--HighlightColor);
   background: transparent;
-  border: 2px solid rgba(245,239,225,.45);
+  border: 4px solid var(--HighlightColor);
 }
 .btn--ghost:hover{
-  border-color: var(--gold);
-  color: var(--gold-light);
+  border-color: var(--BorderColor);
+  color: var(--BorderColor);
   transform: translateY(-2px);
 }
 
@@ -333,9 +311,9 @@ nav a:hover::before {
     justify-content: center;
     align-items: center;
     padding: 100px 24px 100px;
-    background-color: var(--navy);
-    color: var(--backgroundcolor);
-    background-image: linear-gradient(180deg, var(--DarkestColor), var(--navy) 70%, var(--navy-2) 100%);
+    background-color: var(--PrimaryColor);
+    color: var(--PrimaryColor);
+    background-image: linear-gradient(180deg, var(--PrimaryColor), var(--PrimaryColor) 70%, var(--PrimaryColor) 100%);
 }
 
 .Texts {
@@ -355,7 +333,7 @@ nav a:hover::before {
 }
 
 .DarkerText{
-    color: rgba(37,37,37,.72);
+    color: var(--TextColor1);
     font-size: 1.05rem;
 }
 
@@ -368,14 +346,25 @@ nav a:hover::before {
     justify-content: center;
     align-items: center;
     padding: 90px 24px;
-    background-color: var(--backgroundcolor3);
+    background-color: var(--SecondaryColor);
 }
+
+
 
 #BannerKontakt{
     min-height: 80vh;
-    background-color: var(--backgroundcolor3);
+    background-color: var(--SecondaryColor);
     border-top: none;
     border-bottom: none;
+}
+
+.Nastavnici{
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 24px;
+    background-color: var(--SecondaryColor);
 }
 
 .introduction{
@@ -398,8 +387,24 @@ nav a:hover::before {
     flex-shrink: 0;
 }
 
+
+
+@media (max-width:1100px){
+    .introduction img{
+        width: 100vw;
+        height: 400px;
+        border-radius: 0px;
+        margin-top: -90px;
+        box-shadow: none;
+        
+    }
+    .ONamaDivider{
+        fill: var(--SecondaryColor);
+    }
+}
+
 .LittleText{
-    color: var(--terracotta);
+    color: var(--HighlightColor);
     font-style: normal;
     text-transform: uppercase;
     letter-spacing: .1em;
@@ -420,11 +425,11 @@ nav a:hover::before {
 .introduction_Text h1{
     font-size: clamp(1.9rem, 4vw, 2.6rem);
     margin-bottom: .5em;
-    color: var(--navy);
+    color: var(--PrimaryColor);
 }
 
 .introduction_Text p{
-    color: var(--ink-soft);
+    color: var(--TextColor1);
 }
 
 .StatHolder{
@@ -442,19 +447,20 @@ nav a:hover::before {
 .Stat h1{
     margin-bottom: -6px;
     font-size: 2.4rem;
-    color: var(--terracotta);
+    color: var(--HighlightColor);
 }
 .Stat p{
     font-family: var(--font-body);
     font-style: normal;
     font-weight: 500;
-    color: var(--ink-soft);
+    color: var(--TextColor1);
     margin: 0;
+    margin-top: 10px;
 }
 
 #MapButton{
     margin-top: 30px;
-    background-color: var(--navy);
+    background-color: var(--PrimaryColor);
     border-radius: 999px;
     width: 200px;
     height: 50px;
@@ -475,7 +481,7 @@ nav a:hover::before {
 }
 
 #MapButton:hover{
-    background-color: var(--terracotta);
+    background-color: var(--HighlightColor);
     transform: translateY(-2px);
 }
 
@@ -483,9 +489,6 @@ nav a:hover::before {
     .introduction{
         flex-direction: column;
         text-align: center;
-    }
-    .introduction img{
-        max-width: 380px;
     }
     .introduction_Text{
         align-items: center;
@@ -511,18 +514,18 @@ footer{
     gap: 6px;
     padding: 30px 24px 24px;
     margin-top: 0;
-    border-top: 1px solid var(--SoftColor_4);
-    background-color: var(--backgroundcolor);
+    border-top: 1px solid var(--BorderColor);
+    background-color: var(--PrimaryColor);
     text-align: center;
 }
 
 .FooterText{
     font-family: var(--font-display);
-    color: var(--navy);
+    color: var(--TextColor1);
     font-size: var(--MildText);
 }
 .FooterTextDark{
-    color: var(--ink-soft);
+    color: var(--TextColor1);
     font-size: var(--MiniText);
     margin: 0;
 }
@@ -537,7 +540,7 @@ footer{
     font-size: 30px;
     line-height: 1;
     cursor: pointer;
-    color: var(--backgroundcolor);
+    color: var(--PrimaryColor);
     margin: 0;
     padding: 0;
     width: auto;
@@ -552,24 +555,27 @@ footer{
     top: var(--nav-height);
     left: 0;
     width: 100%;
-    background-color: var(--navy-2);
-    border-bottom: 1px solid var(--SoftColor_4);
+    background-color: var(--NavColor);
+    border-bottom: 1px solid var(--BorderColor);
     z-index: 999;
     padding: 10px 0;
+    
 }
 
 .nav-links-mobile.open {
     display: flex;
 }
+
 .mainimage{
-    margin-top: 45px;
+    margin-top: 25px;
     scale: .8;
 }
+
 @media (max-width:1100px){
     .mainimage{
-        margin-left: -180px;
+        margin-left: -70px;
         scale: .5;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
 }
@@ -578,13 +584,13 @@ footer{
     padding: 15px 25px;
     font-size: var(--MildText);
     text-decoration: none;
-    color: var(--backgroundcolor);
+    color: var(--PrimaryColor);
     border-left: 3px solid transparent;
     transition: border-color .2s ease, background .2s ease;
 }
 
 .nav-links-mobile a:hover{
-    border-left-color: var(--gold);
+    border-left-color: var(--PrimaryColor);
     background: rgba(245,239,225,.05);
 }
 
@@ -628,7 +634,7 @@ footer{
     flex-direction: row;
     padding: 150px 24px 100px;
     gap: 60px;
-    background-color: var(--backgroundcolor3);
+    background-color: var(--SecondaryColor);
 }
 
 .box{
@@ -650,7 +656,7 @@ footer{
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    background-color: var(--white);
+    background-color: var(--PrimaryColor);
     box-shadow: 0 18px 40px -22px rgba(20,43,38,.3);
     transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-radius .3s ease;
 }
@@ -673,7 +679,7 @@ footer{
 
 .ProgramIcon{
     font-size: 32px !important;
-    color: var(--terracotta) !important;
+    color: var(--HighlightColor) !important;
     margin-bottom: 6px;
 }
 
@@ -695,7 +701,7 @@ footer{
     align-items: left;
     justify-self: left;
     text-align: left;
-    color: var(--ink-soft);
+    color: var(--TextColor1);
 }
 
 #ViseInformacija{
@@ -708,7 +714,7 @@ footer{
     height: auto;
     justify-self: bottom;
     align-self: left;
-    color: var(--terracotta);
+    color: var(--HighlightColor);
     font-family: var(--font-body);
     font-weight: 600;
     font-size: var(--MildText);
@@ -718,13 +724,13 @@ footer{
 }
 
 #ViseInformacija:hover{
-    color: var(--gold);
+    color: var(--HighlightColor);
 }
 
 .Podsekcija{
-    width: min(400px, 88vw);
+    min-width: 350px;
     max-width: 400px;
-    background-color: var(--backgroundcolor2);
+    background-color: var(--PrimaryColor);
     border-radius: 0px 0px 20px 20px;
     overflow: hidden;
     justify-content: left;
@@ -734,7 +740,7 @@ footer{
     opacity: 0;
     max-height: 0;
     transition: opacity 0.4s ease, max-height 0.4s ease;
-    color: var(--navy);
+    color: var(--NavColor);
 }
 .Podsekcija.open {
     opacity: 1;
@@ -743,7 +749,7 @@ footer{
 
 .Podsekcija details{
     padding: 14px 20px;
-    border-top: 1px dashed var(--SoftColor_4);
+    border-top: 1px dashed var(--BorderColor);
 }
 .Podsekcija details:first-child{
     border-top: none;
@@ -756,15 +762,24 @@ details summary {
 }
 
 details[open] summary {
-    color: var(--terracotta);
+    color: var(--HighlightColor);
 }
 
 details p {
     margin: .5em 0 0;
     font-size: .94rem;
-    color: var(--ink-soft);
+    color: var(--TextColor1);
     animation: slideDown 0.3s ease;
 }
+
+details[open] details summary{
+    color: var(--TextColor1);
+}
+
+details[open] details[open] summary{
+    color: var(--HighlightColor);
+}
+
 
 @keyframes slideDown {
     from { opacity: 0; transform: translateY(-8px); }
@@ -776,8 +791,8 @@ details p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 1px dashed var(--SoftColor_4);
-    border-bottom: 1px dashed var(--SoftColor_4);
+    border-top: 1px dashed var(--BorderColor);
+    border-bottom: 1px dashed var(--BorderColor);
 }
 
 @media (max-width: 1100px) {
@@ -806,3 +821,63 @@ details p {
     text-decoration: none;
 }
 
+.Nastavnik{
+    width: min(400px, 88vw);
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: var(--PrimaryColor);
+    box-shadow: 0 18px 40px -22px rgba(20,43,38,.3);
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-radius .3s ease;
+    text-align: left;
+
+}
+
+.MainNastavnici{
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+.NastavnikIMG{
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 18px 40px -22px rgba(20,43,38,.3);
+}
+
+.Nastavnik p, h2{
+    padding-left: 20px;
+}
+
+.Box_Nastavnici{
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+    justify-content: center;
+}
+
+
+@media (max-width: 1100px){
+    .Box_Nastavnici
+    {
+        flex-direction: column;
+    }
+}
+
+#ZanimanjeNastavnika {
+    text-align: center;
+    color: var(--NavColor);
+    position: relative;
+    padding-left: 0px;
+}
+
+#ZanimanjeNastavnika::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 80%;
+    height: 2px;
+    background: var(--NavColor);
+    transform: translateX(-50%);
+}
