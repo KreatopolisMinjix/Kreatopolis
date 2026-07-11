@@ -21,8 +21,6 @@
     --XXLText: 100px;
 
     --ease: cubic-bezier(.22,.9,.3,1);
-
-    /* how tall the fixed nav is at rest — used for scroll offsets */
     --nav-height: 75px;
 }
 
@@ -301,9 +299,6 @@ nav a:hover::before {
   transform: translateY(-2px);
 }
 
-/* =========================
-   TEXT / DIVIDER SECTIONS
-   ========================= */
 .TextPart {
     min-height: 26vh;
     display: flex;
@@ -503,9 +498,7 @@ nav a:hover::before {
     }
 }
 
-/* =========================
-   FOOTER
-   ========================= */
+
 footer{
     display: flex;
     flex-direction: column;
@@ -622,9 +615,6 @@ footer{
     }
 }
 
-/* =========================
-   PROGRAMI
-   ========================= */
 .ProgramiSekcije{
     min-height: 50vh;
     display: flex;
