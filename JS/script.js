@@ -5,8 +5,7 @@ const OFFSET   = 0.13;
 const TARGETS = [
   ['nav',                  'fadeDown'  ],
   ['h1',                   'fadeUp'    ],
-  ['p',                    'fadeUp'    ],
-  ['img',                  'pop'       ],
+  ['img:not(.GalerijaSlika)', 'pop'    ],
   ['.Texts',               'fadeUp'    ],
   ['.Program',             'fadeUp'    ],
   ['.ProgramIntroduction', 'fadeUp'    ],
@@ -92,10 +91,100 @@ function izrolaj(id, btn) {
   btn.textContent = podsekcija.classList.contains('open') ? 'Zatvori' : 'Više informacija →';
 }
 
+const statNums = document.querySelectorAll('.ink_num');
+
+const animateCount = (el) => {
+  const target = parseInt(el.dataset.count, 10) || 0;
+  const duration = 1400;
+  const start = performance.now();
+
+  const step = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target);
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+};
+
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      setTimeout(() => animateCount(entry.target), 100);
+      statObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+statNums.forEach(el => statObserver.observe(el));
+
+/* =========================
+   GALERIJA CAROUSEL — continuous glide
+   ========================= */
+function initGalerijaCarousel() {
+  const track = document.querySelector('.MainCarousel');
+  if (!track || !track.firstElementChild) {
+    console.warn('Galerija carousel: .MainCarousel or its images not found.');
+    return;
+  }
+
+  const GAP   = 50;
+  const SPEED = 40;
+
+  let offset     = 0;
+  let firstWidth = track.firstElementChild.getBoundingClientRect().width + GAP;
+  let lastTime   = null;
+  let paused     = false;
+
+  if (!firstWidth || firstWidth <= GAP) {
+    console.warn('Galerija carousel: image width came back as 0 — check .GalerijaSlika CSS is loaded before this runs.');
+  }
+
+  const recalcFirstWidth = () => {
+    firstWidth = track.firstElementChild.getBoundingClientRect().width + GAP;
+  };
+  window.addEventListener('resize', recalcFirstWidth);
+
+  track.style.willChange = 'transform';
+
+  function frame(now) {
+    if (lastTime === null) lastTime = now;
+    const dt = now - lastTime;
+    lastTime = now;
+
+    if (!paused) {
+      offset += (SPEED * dt) / 1000;
+
+      while (offset >= firstWidth && firstWidth > 0) {
+        offset -= firstWidth;
+        track.appendChild(track.firstElementChild);
+        recalcFirstWidth();
+      }
+
+      track.style.transform = `translateX(${-offset}px)`;
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  requestAnimationFrame(frame);
+
+  const gallery = track.closest('.Galerija');
+  gallery?.addEventListener('mouseenter', () => { paused = false; });
+  gallery?.addEventListener('mouseleave', () => {
+    paused = false;
+    lastTime = null;
+  });
+}
+
+/* =========================
+   SINGLE INIT BLOCK — everything starts from here, once
+   ========================= */
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     animateNavOnLoad();
     init();
+    initGalerijaCarousel();
     document.getElementById('burgerBtn')?.addEventListener('click', () => {
       document.getElementById('navLinks').classList.toggle('open');
     });
@@ -103,35 +192,8 @@ if (document.readyState === 'loading') {
 } else {
   animateNavOnLoad();
   init();
+  initGalerijaCarousel();
   document.getElementById('burgerBtn')?.addEventListener('click', () => {
     document.getElementById('navLinks').classList.toggle('open');
   });
 }
-
-
-const statNums = document.querySelectorAll('.ink_num');
-
-  const animateCount = (el) => {
-    const target = parseInt(el.dataset.count, 10) || 0;
-    const duration = 1400;
-    const start = performance.now();
-
-    const step = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target);
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
-
-  const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        setTimeout(() => animateCount(entry.target), 100);
-        statObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  statNums.forEach(el => statObserver.observe(el));
