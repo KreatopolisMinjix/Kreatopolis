@@ -174,22 +174,23 @@ nav a:hover::before {
 }
 
 .note--1{
-  top: 18%;
+  top: 25%;
   left: 8%;
   animation: float 7s ease-in-out infinite;
+  font-size: 50px;
 }
 
 .note--2{
-  top: 62%;
-  left: 88%;
+  top: 90%;
+  left: 80%;
   font-size: 50px;
   animation: float 9s ease-in-out infinite reverse;
 }
 
 .note--3{
   top: 78%;
-  left: 14%;
-  font-size: 40px;
+  left: 10%;
+  font-size: 50px;
   animation: float 8s ease-in-out infinite;
   animation-delay: 1.2s;
 }
