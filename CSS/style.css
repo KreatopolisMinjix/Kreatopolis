@@ -174,7 +174,7 @@ nav a:hover::before {
 }
 
 .note--1{
-  top: 25%;
+  top: 18%;
   left: 8%;
   animation: float 7s ease-in-out infinite;
   font-size: 50px;
