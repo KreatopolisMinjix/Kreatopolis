@@ -781,8 +781,6 @@ footer{
 }
 
 .PodsekcijaBiografija{
-    min-width: 350px;
-    max-width: 400px;
     background-color: var(--PrimaryColor);
     border-radius: 0px 0px 20px 20px;
     justify-content: left;
