@@ -765,9 +765,11 @@ footer{
     transition: opacity 0.4s ease, max-height 0.4s ease;
     color: var(--NavColor);
 }
+
+
 .Podsekcija.open {
     opacity: 1;
-    max-height: 1000px;
+    max-height: 10000px;
 }
 
 .Podsekcija details{
@@ -776,6 +778,29 @@ footer{
 }
 .Podsekcija details:first-child{
     border-top: none;
+}
+
+.PodsekcijaBiografija{
+    min-width: 350px;
+    max-width: 400px;
+    background-color: var(--PrimaryColor);
+    border-radius: 0px 0px 20px 20px;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    display: flex;
+    color: var(--NavColor);
+}
+.PodsekcijaBiografija:first-child{
+    border-top: none;
+}
+.PodsekcijaBiografija.open{
+    max-height: 1000px;
+}
+
+.PodsekcijaBiografija details{
+    padding: 14px 20px;
+    border-top: 1px dashed var(--BorderColor);    
 }
 
 details summary {
@@ -912,7 +937,8 @@ details[open] details[open] summary{
     text-align: center;
     color: var(--NavColor);
     position: relative;
-    padding-left: 0px;
+    padding: 20px 20px 0px 20px;
+    font-weight: 700;
 }
 
 #ZanimanjeNastavnika::after {
