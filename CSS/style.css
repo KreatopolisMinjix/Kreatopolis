@@ -1030,6 +1030,7 @@ details[open] details[open] summary{
     display:flex;
     align-items:stretch;
     gap:14px;
+    flex-direction: column;
   }
  
   .arrow{
@@ -1046,8 +1047,8 @@ details[open] details[open] summary{
     justify-content:center;
     transition:background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
     border-radius:2px;
-    height: 30px;
-    margin-top: 150px;
+    height: 40px;
+    margin-top: 10px;
   }
   .arrow:hover{
     background:var(--PrimaryColor);
@@ -1162,7 +1163,7 @@ details[open] details[open] summary{
  
   @media (max-width:767px){
     .track{grid-template-columns:repeat(var(--cols,2),1fr);}
-    .arrow{width:36px; font-size:16px;}
+    .arrow{width:50px; font-size:20px;}
     .card-title{font-size:15px;}
   }
 
@@ -1181,3 +1182,11 @@ details[open] details[open] summary{
   width:fit-content;
 }
 .card-link:hover{ text-decoration:underline; }
+
+.DivArrows{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:50px;
+}
