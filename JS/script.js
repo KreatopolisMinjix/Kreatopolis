@@ -197,3 +197,102 @@ if (document.readyState === 'loading') {
     document.getElementById('navLinks').classList.toggle('open');
   });
 }
+
+
+  const NEWS = [
+    { title: "Ubrzani kurs pevanja!", text: "Construction on the east-west corridor begins next spring, promising to cut commute times in half.", img: "https://picsum.photos/seed/news1/600/450" },
+    { title: "Local Startup Raises Seed Round", text: "A three-person team building climate sensors closed funding led by regional investors.", img: "https://picsum.photos/seed/news2/600/450" },
+    { title: "Museum Unveils Restored Mural", text: "Conservators spent eight months reviving a century-old fresco hidden behind drywall.", img: "https://picsum.photos/seed/news3/600/450" },
+    { title: "Harvest Season Breaks Regional Record", text: "Favorable rains pushed grain yields to their highest level in over a decade.", img: "https://picsum.photos/seed/news4/600/450" },
+    { title: "New Library Wing Opens Downtown", text: "The extension adds reading rooms, a maker space, and a rooftop terrace for the public.", img: "https://picsum.photos/seed/news5/600/450" },
+    { title: "River Cleanup Draws Record Volunteers", text: "Over two thousand residents joined the annual effort to clear debris from the waterway.", img: "https://picsum.photos/seed/news6/600/450" },
+    { title: "Tech Fair Returns After Two-Year Gap", text: "Exhibitors from forty companies showcased prototypes to a sold-out crowd.", img: "https://picsum.photos/seed/news7/600/450" },
+    { title: "Historic Bridge Reopens to Traffic", text: "A two-year restoration preserved the original ironwork while reinforcing the deck.", img: "https://picsum.photos/seed/news8/600/450" },
+    { title: "Symphony Announces Winter Season", text: "The program features three world premieres alongside classic repertoire.", img: "https://picsum.photos/seed/news9/600/450" },
+    { title: "Farmers Market Expands to Weekdays", text: "Vendors will now set up stalls every Wednesday in addition to weekend hours.", img: "https://picsum.photos/seed/news10/600/450" },
+    { title: "University Lab Patents New Alloy", text: "Researchers say the material could reduce weight in aerospace components by a third.", img: "https://picsum.photos/seed/news11/600/450" },
+    { title: "Street Art Festival Draws Global Artists", text: "Thirty muralists transformed the old industrial district over a single weekend.", img: "https://picsum.photos/seed/news12/600/450" },
+    { title: "Public Pool Reopens After Renovation", text: "New filtration systems and accessible entry ramps were installed over the winter.", img: "https://picsum.photos/seed/news13/600/450" },
+    { title: "City Adopts Bike-Share Program", text: "Two hundred docking stations will roll out across the metro area by summer.", img: "https://picsum.photos/seed/news14/600/450" },
+    { title: "Regional Airport Adds New Route", text: "A direct connection to the coast begins service next month.", img: "https://picsum.photos/seed/news15/600/450" },
+    { title: "Community Garden Yields First Harvest", text: "Neighbors shared tomatoes, herbs, and squash grown on a once-vacant lot.", img: "https://picsum.photos/seed/news16/600/450" },
+    { title: "Opera House Completes Acoustic Upgrade", text: "New panels and seating adjustments improve sound clarity throughout the hall.", img: "https://picsum.photos/seed/news17/600/450" },
+    { title: "Night Market Trial Deemed a Success", text: "Organizers plan to make the Friday evening market a permanent fixture.", img: "https://picsum.photos/seed/news18/600/450" },
+    { title: "Solar Array Powers Municipal Buildings", text: "The installation is expected to cover sixty percent of city energy use.", img: "https://picsum.photos/seed/news19/600/450" },
+    { title: "Youth Orchestra Wins National Award", text: "The ensemble took first place in a competition featuring forty programs nationwide.", img: "https://picsum.photos/seed/news20/600/450" }
+  ];
+ 
+  const track = document.getElementById('track');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const rangeLabel = document.getElementById('rangeLabel');
+  const pageLabel = document.getElementById('pageLabel');
+  const dotsWrap = document.getElementById('dots');
+ 
+  let cols = getCols();
+  let pageIndex = 0;
+ 
+  function getCols(){
+    const w = window.innerWidth;
+    if (w <= 767) return 2;
+    if (w <= 1023) return 4;
+    return 5;
+  }
+ 
+  function totalPages(){
+    return Math.ceil(NEWS.length / cols);
+  }
+ 
+  function render(){
+    track.style.setProperty('--cols', cols);
+    const start = pageIndex * cols;
+    const items = NEWS.slice(start, start + cols);
+ 
+    track.innerHTML = items.map((n, i) => `
+      <article class="card" style="animation-delay:${i * 0.04}s">
+        <div class="card-eyebrow">DISPATCH ${String(start + i + 1).padStart(2,'0')}</div>
+        <img class="card-img" src="${n.img}" alt="${n.title}" loading="lazy">
+        <div class="card-body">
+          <h2 class="card-title">${n.title}</h2>
+          <p class="card-text">${n.text}</p>        
+        </div>
+      </article>
+    `).join('');
+ 
+    const tp = totalPages();
+    const rangeStart = start + 1;
+    const rangeEnd = Math.min(start + cols, NEWS.length);
+    rangeLabel.textContent = `Prikazuje se ${String(rangeStart).padStart(2,'0')}–${String(rangeEnd).padStart(2,'0')} od ${NEWS.length}`;
+    pageLabel.textContent = `Stranica ${pageIndex + 1} / ${tp}`;
+ 
+    dotsWrap.innerHTML = Array.from({length: tp}, (_, i) =>
+      `<span class="dot${i === pageIndex ? ' active' : ''}"></span>`
+    ).join('');
+ 
+    prevBtn.disabled = false;
+    nextBtn.disabled = false;
+  }
+ 
+  function go(direction){
+    const tp = totalPages();
+    pageIndex = (pageIndex + direction + tp) % tp;
+    render();
+  }
+ 
+  prevBtn.addEventListener('click', () => go(-1));
+  nextBtn.addEventListener('click', () => go(1));
+ 
+  window.addEventListener('resize', () => {
+    const newCols = getCols();
+    if (newCols !== cols){
+      // keep roughly the same news item in view when breakpoint changes
+      const firstVisibleItem = pageIndex * cols;
+      cols = newCols;
+      pageIndex = Math.floor(firstVisibleItem / cols);
+      const tp = totalPages();
+      if (pageIndex >= tp) pageIndex = tp - 1;
+      render();
+    }
+  });
+ 
+  render();
