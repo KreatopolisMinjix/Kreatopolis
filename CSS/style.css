@@ -995,7 +995,7 @@ details[open] details[open] summary{
  
   .wire{
     width:100%;
-    max-width:1240px;
+    max-width:1750px;
   }
  
   .wire-head{
@@ -1047,6 +1047,7 @@ details[open] details[open] summary{
     transition:background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
     border-radius:2px;
     height: 30px;
+    margin-top: 150px;
   }
   .arrow:hover{
     background:var(--PrimaryColor);
