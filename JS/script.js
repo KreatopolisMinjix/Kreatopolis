@@ -211,15 +211,6 @@ if (document.readyState === 'loading') {
     { title: "Symphony Announces Winter Season", text: "The program features three world premieres alongside classic repertoire.", img: "https://picsum.photos/seed/news9/600/450" },
     { title: "Farmers Market Expands to Weekdays", text: "Vendors will now set up stalls every Wednesday in addition to weekend hours.", img: "https://picsum.photos/seed/news10/600/450" },
     { title: "University Lab Patents New Alloy", text: "Researchers say the material could reduce weight in aerospace components by a third.", img: "https://picsum.photos/seed/news11/600/450" },
-    { title: "Street Art Festival Draws Global Artists", text: "Thirty muralists transformed the old industrial district over a single weekend.", img: "https://picsum.photos/seed/news12/600/450" },
-    { title: "Public Pool Reopens After Renovation", text: "New filtration systems and accessible entry ramps were installed over the winter.", img: "https://picsum.photos/seed/news13/600/450" },
-    { title: "City Adopts Bike-Share Program", text: "Two hundred docking stations will roll out across the metro area by summer.", img: "https://picsum.photos/seed/news14/600/450" },
-    { title: "Regional Airport Adds New Route", text: "A direct connection to the coast begins service next month.", img: "https://picsum.photos/seed/news15/600/450" },
-    { title: "Community Garden Yields First Harvest", text: "Neighbors shared tomatoes, herbs, and squash grown on a once-vacant lot.", img: "https://picsum.photos/seed/news16/600/450" },
-    { title: "Opera House Completes Acoustic Upgrade", text: "New panels and seating adjustments improve sound clarity throughout the hall.", img: "https://picsum.photos/seed/news17/600/450" },
-    { title: "Night Market Trial Deemed a Success", text: "Organizers plan to make the Friday evening market a permanent fixture.", img: "https://picsum.photos/seed/news18/600/450" },
-    { title: "Solar Array Powers Municipal Buildings", text: "The installation is expected to cover sixty percent of city energy use.", img: "https://picsum.photos/seed/news19/600/450" },
-    { title: "Youth Orchestra Wins National Award", text: "The ensemble took first place in a competition featuring forty programs nationwide.", img: "https://picsum.photos/seed/news20/600/450" }
   ];
  
   const track = document.getElementById('track');
@@ -234,9 +225,9 @@ if (document.readyState === 'loading') {
  
   function getCols(){
     const w = window.innerWidth;
-    if (w <= 767) return 2;
-    if (w <= 1023) return 4;
-    return 5;
+    if (w <= 767) return 1;
+    if (w <= 1050) return 3;
+    return 4;
   }
  
   function totalPages(){
