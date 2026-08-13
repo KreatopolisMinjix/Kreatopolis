@@ -60,6 +60,43 @@
 
     </section>    
 
+
+    <!-- Novosti -->
+    <section class="Novosti">
+ 
+            <div class="wire">
+                <div class="wire-head">
+                <h1>Novosti</h1>
+                <div class="wire-meta" id="rangeLabel">Prikazuje se 01–05 / 20</div>
+            </div>
+ 
+            <div class="carousel">
+                <button class="arrow" id="prevBtn" aria-label="Previous news">&#8592;</button>
+                <div class="viewport">
+                    <div class="track" id="track">
+
+                    </div>
+                </div>
+                <button class="arrow" id="nextBtn" aria-label="Next news">&#8594;</button>
+            </div>
+ 
+            <div class="wire-foot">
+                <span id="pageLabel">PAGE 1 / 4</span>
+                <div class="dots" id="dots"></div>
+                </div>
+            </div>       
+        
+    </section>
+    <!-- Pasus Novosti -->
+    <section class="TextPart" id="NovostiOpis">
+        
+        <div class="Texts reveal">
+            <h1>O Nama</h1>
+            <p class="DarkerText">tekst</p>
+        </div>
+     
+    </section>
+
     <!-- Sekcija - O NAMA -->
     <section class="banner" id="ONama">
         <div class="introduction">
@@ -181,7 +218,7 @@
                                 <span class="ink">Dodatak 2:</span>   Nastup uz školski bend i godišnji koncerti Kreatopolis Art
                                 Studija<br><br></p>
                         </details>
-                        <details>
+                        <details id="UbrzaniKurs">
                             <summary>Ubrzani kurs</summary>
                             <p>
 <p>Intenzivni šestonedeljni program za razvoj glasa, vokalne tehnike i scenskog izraza.<br><br>
@@ -314,8 +351,6 @@ Dolaziš da za šest nedelja napraviš prvi ozbiljan korak.<br><br>
 Tvoj glas je vredan da se čuje. Samo treba da mu daš priliku da se razvije.<br><br>
 
 <span class="ink">14. SEPTEMBAR — TVOJ PRVI KORAK</span><br><br>
-<span class="ink">27.900 RSD — PRVA 3 MESTA</span><br><br>
-<span class="ink">29.900 RSD — REDOVNA CENA</span><br><br>
 <span class="ink">OSLOBODI SVOJ GLAS!</span></p>
 
 
@@ -492,112 +527,7 @@ Tvoj glas je vredan da se čuje. Samo treba da mu daš priliku da se razvije.<br
                 </details>
             </div>
             </div>
-        
-            <div class="Sekcija">
 
-            <div class="Program">
-                <div>
-                    <i class="fa-solid fa-palette ProgramIcon"></i>
-                    <p class="LittleText" id="program">Likovni atelje</p> 
-                    <p class="LittleText" id="LittleTextProgram">Kreativne radionice crtanja, slikanja i vajanja za decu, mlade i odrasle svih nivoa iskustva i uzrasta.</p>
-                    <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('podsekcija-2', this)">Više informacija →</button>
-                </div>
-            </div>
-
-            <div class="Podsekcija" id="podsekcija-2">
-                <details>
-                    <summary>Deca i mladi</summary>
-                    <p>
-
-                        <details>
-                            <summary>Biblioteka</summary>
-                            <p>Prostor za inspiraciju, istraživanje umetnosti i upoznavanje sa knjigama iz sveta kreativnosti.</p>
-                        </details>
-
-                        <details>
-                            <summary>Mali atelje RADOZNALOVCI</summary>
-                            <p>Prvi susret najmlađih sa bojama, oblicima i različitim likovnim tehnikama kroz igru.</p>
-                        </details>
-
-                        <details>
-                            <summary>Mali atelje SLIKARI</summary>
-                            <p>Razvijanje mašte i likovnog izraza kroz crtanje, slikanje i kreativne projekte.</p>
-                        </details>
-
-                        <details>
-                            <summary>Likovni atelje za TINEJDŽERE</summary>
-                            <p>Naprednije tehnike crtanja i slikanja uz podsticanje ličnog umetničkog izraza.</p>
-                        </details>
-                    
-                        <details>
-                            <summary>Pripreme za srednje umetničke škole i fakultete</summary>
-                            <p>Stručno vođene pripreme za prijemne ispite uz individualan pristup svakom polazniku.</p>
-                        </details>
-
-                    </p>
-                </details>
-
-                <details>
-                    <summary>Odrasli</summary>
-                    <p>
-
-                        <details>
-                            <summary>Rekreativno slikanje</summary>
-                            <p>Opuštene radionice namenjene svima koji žele da slikaju, istražuju tehnike i uživaju u stvaranju.</p>
-                        </details>
-
-                        <details>
-                            <summary>Kurs za odrasle</summary>
-                            <p>Savladajte osnove ili usavršite postojeće znanje kroz rad sa iskusnim mentorima.</p>
-                        </details>
-                        
-                    </p>
-                </details>
-
-                <details>
-                    <summary>Format časova</summary>
-                    <p>Individualni ili grupni časovi prilagođeni uzrastu i nivou znanja polaznika.</p>
-                </details>                
-
-                <details>
-                    <summary>Oprema</summary>
-                    <p>Sav potreban likovni materijal obezbeđen je tokom radionica, osim ukoliko nije drugačije naznačeno.</p>
-                </details>
-            </div>
-            </div> 
-
-            <div class="Sekcija">
-
-            <div class="Program">
-                <div>
-                    <i class="fas fa-photo-film ProgramIcon"></i>
-                    <p class="LittleText" id="program">FOTOGRAFIJA I FILM</p> 
-                    <p class="LittleText" id="LittleTextProgram">Naučite osnove fotografije, filmskog stvaralaštva i kreativnog vizuelnog izražavanja.</p>
-                    <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('podsekcija-3', this)">Više informacija →</button>
-                </div>
-            </div>
-
-            <div class="Podsekcija" id="podsekcija-3">
-                <details>
-                    <summary>Studio bebi i porodične fotografije</summary>
-                    <p>Profesionalne radionice i upoznavanje sa tehnikama portretne i porodične fotografije.</p>
-                </details>
-
-                <details>
-                    <summary>Stop-motion animacija za decu</summary>
-                    <p>Deca kroz igru stvaraju svoje prve animirane filmove koristeći figurice, crteže i maštu.</p>
-                </details>
-
-                <details>
-                    <summary>Škola filma za srednjoškolce</summary>
-                    <p>Upoznajte proces nastanka filma – od ideje i scenarija do snimanja i montaže.</p>
-                </details>
-
-            </div>
-            </div>   
-        </div>
-
-        <div class="box"> 
             <div class="Sekcija">
 
             <div class="Program">
@@ -673,7 +603,84 @@ samostalnijem i kompletnijem muzičaru.</p>
                 </details>
 
             </div>
+            </div>            
+        
+            <div class="Sekcija">
+
+            <div class="Program">
+                <div>
+                    <i class="fa-solid fa-palette ProgramIcon"></i>
+                    <p class="LittleText" id="program">Likovni atelje</p> 
+                    <p class="LittleText" id="LittleTextProgram">Kreativne radionice crtanja, slikanja i vajanja za decu, mlade i odrasle svih nivoa iskustva i uzrasta.</p>
+                    <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('podsekcija-2', this)">Više informacija →</button>
+                </div>
             </div>
+
+            <div class="Podsekcija" id="podsekcija-2">
+                <details>
+                    <summary>Deca i mladi</summary>
+                    <p>
+
+                        <details>
+                            <summary>Biblioteka</summary>
+                            <p>Prostor za inspiraciju, istraživanje umetnosti i upoznavanje sa knjigama iz sveta kreativnosti.</p>
+                        </details>
+
+                        <details>
+                            <summary>Mali atelje RADOZNALOVCI</summary>
+                            <p>Prvi susret najmlađih sa bojama, oblicima i različitim likovnim tehnikama kroz igru.</p>
+                        </details>
+
+                        <details>
+                            <summary>Mali atelje SLIKARI</summary>
+                            <p>Razvijanje mašte i likovnog izraza kroz crtanje, slikanje i kreativne projekte.</p>
+                        </details>
+
+                        <details>
+                            <summary>Likovni atelje za TINEJDŽERE</summary>
+                            <p>Naprednije tehnike crtanja i slikanja uz podsticanje ličnog umetničkog izraza.</p>
+                        </details>
+                    
+                        <details>
+                            <summary>Pripreme za srednje umetničke škole i fakultete</summary>
+                            <p>Stručno vođene pripreme za prijemne ispite uz individualan pristup svakom polazniku.</p>
+                        </details>
+
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Odrasli</summary>
+                    <p>
+
+                        <details>
+                            <summary>Rekreativno slikanje</summary>
+                            <p>Opuštene radionice namenjene svima koji žele da slikaju, istražuju tehnike i uživaju u stvaranju.</p>
+                        </details>
+
+                        <details>
+                            <summary>Kurs za odrasle</summary>
+                            <p>Savladajte osnove ili usavršite postojeće znanje kroz rad sa iskusnim mentorima.</p>
+                        </details>
+                        
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Format časova</summary>
+                    <p>Individualni ili grupni časovi prilagođeni uzrastu i nivou znanja polaznika.</p>
+                </details>                
+
+                <details>
+                    <summary>Oprema</summary>
+                    <p>Sav potreban likovni materijal obezbeđen je tokom radionica, osim ukoliko nije drugačije naznačeno.</p>
+                </details>
+            </div>
+            </div> 
+        </div>
+
+        <div class="box"> 
+
 
             <div class="Sekcija">
 
@@ -718,12 +725,105 @@ samostalnijem i kompletnijem muzičaru.</p>
             </div>
             </div>
 
-              
+            <div class="Sekcija">
 
+            <div class="Program">
+                <div>
+                    <i class="fas fa-photo-film ProgramIcon"></i>
+                    <p class="LittleText" id="program">FOTOGRAFIJA I FILM</p> 
+                    <p class="LittleText" id="LittleTextProgram">Naučite osnove fotografije, filmskog stvaralaštva i kreativnog vizuelnog izražavanja.</p>
+                    <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('podsekcija-3', this)">Više informacija →</button>
+                </div>
+            </div>
+
+            <div class="Podsekcija" id="podsekcija-3">
+                <details>
+                    <summary>Studio bebi i porodične fotografije</summary>
+                    <p>Profesionalne radionice i upoznavanje sa tehnikama portretne i porodične fotografije.</p>
+                </details>
+
+                <details>
+                    <summary>Stop-motion animacija za decu</summary>
+                    <p>Deca kroz igru stvaraju svoje prve animirane filmove koristeći figurice, crteže i maštu.</p>
+                </details>
+
+                <details>
+                    <summary>Škola filma za srednjoškolce</summary>
+                    <p>Upoznajte proces nastanka filma – od ideje i scenarija do snimanja i montaže.</p>
+                </details>
+
+            </div>
+            </div>  
+            
+        
         </div>
 
     </section>
+    <!-- Dodatni program -->
+    <section class="TextPart" id="Nastavnici">
+        
+        <div class="Texts reveal">
+            <h1>Dodatni Program
+            </h1>
+        </div>
+        <p class="DarkerText">Dodatni programi pružaju polaznicima priliku da kroz različite aktivnosti prošire svoja znanja, razviju nove veštine i steknu dodatno praktično iskustvo.</p>
+    </section>  
+    <section class="ProgramiSekcije" style="flex-direction: column; align-items: center;">
 
+
+            <div class="DivNovosti">
+            <div class="Sekcija">
+
+            <div class="Program">
+                <div>
+                    
+                <i class="fa-solid fa-drum ProgramIcon"></i>
+                    
+                    
+                    <p class="LittleText" id="program">Nastup uz studijski bend i godišnji koncerti Kreatopolis Art Studija</p> 
+
+                    <p class="LittleText" id="LittleTextProgram">Polaznici koji žele da svoje znanje pretoče u praktično izvođačko iskustvo
+mogu učestvovati na koncertima Kreatopolis Art Studija uz podršku studijskog
+benda.</p>
+                    <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('novosti-1', this)">Više informacija →</button>
+                </div>
+            </div>
+
+            <div class="Podsekcija" id="novosti-1">
+
+                <details>
+                    <summary>O Dodatku</summary>
+                    <p><span class="ink"> <br>Ovaj dodatak obuhvata:</span><br><br>
+
+• izbor i pripremu repertoara;<br><br>
+• rad na interpretaciji pesme;<br><br>
+• probe u muzičkom studiju<br><br>
+• probe sa školskim bendom;<br><br>
+• razvoj sigurnosti u izvođenju uživo;<br><br>
+• iskustvo rada u profesionalnom muzičkom okruženju.<br><br>
+Probe se održavaju u prostorijama škole, kao i u profesionalnom studijskom
+okruženju, pružajući polaznicima priliku da upoznaju proces rada koji prati
+stvarne muzičke projekte.<br><br>
+Tokom godine Kreatopolis Art Studio organizuje dva godišnja koncerta, na
+kojima polaznici imaju priliku da predstave svoj napredak publici i steknu
+dragoceno iskustvo javnog nastupa.<br><br>
+Učešće na koncertima podrazumeva kompletnu pripremu — od rada na
+pesmi i interpretaciji, preko proba sa bendom, do samog izvođenja pred
+publikom.<br><br>
+Cilj Standardnog programa nije samo razvoj kvalitetnog glasa, već stvaranje
+sigurnog, muzikalnog i autentičnog pevača koji kroz stručan rad, praktično
+iskustvo i nastupe otkriva svoj lični muzički put.<br><br>
+Bilo da polaznik želi da pevanje ostane njegova strast i hobi, ili tek istražuje
+mogućnost ozbiljnijeg bavljenja muzikom, Standardni program pruža stabilne
+temelje za svaki naredni korak.
+                    </p>
+                </details>
+
+            </div>
+        </div>   
+            </div>   
+    </section>
+        
     <!-- Pasus Nastavnici -->
     <section class="TextPart" id="Nastavnici">
         
@@ -875,6 +975,8 @@ samostalnijem i kompletnijem muzičaru.</p>
 
     </section>
     
+ 
+    
     <!-- Pasus Kontakt -->
     <section class="TextPart" id="kontakt">
         
@@ -937,112 +1039,9 @@ samostalnijem i kompletnijem muzičaru.</p>
 
     </section>
 
-    <!-- Pasus Novosti -->
-    <section class="TextPart" id="NovostiOpis">
-        
-        <div class="Texts reveal">
-            <h1>Novosti</h1>
-            <p class="DarkerText">Budite u toku sa najnovijim dešavanjima, obaveštenjima i zanimljivostima.</p>
-        </div>
-     
-    </section>
 
-    <!-- Novosti -->
-    <section class="Novosti">
-        <!-- Novost 
-        <div class="DivNovosti">
-            <div class="Sekcija">
 
-            <div class="Program">
-                <div>
-                    <i class="fas fa-newspaper ProgramIcon"></i>
-                    <p class="LittleText" id="program">Dešavanje</p> 
-                    <p class="LittleText" id="program">xx.xx.2026.</p> 
-                    <p class="LittleText" id="LittleTextProgram">Opis opis opis opis</p>
-                    <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('novosti-1', this)">Više informacija →</button>
-                </div>
-            </div>
 
-            <div class="Podsekcija" id="novosti-1">
-
-                <details>
-                    <summary>O Dešavanju</summary>
-                    <p>Opis opis opis opis Opis opis opis opis Opis opis opis opis
-                        Opis opis opis opis Opis opis opis opis Opis opis opis opis
-                        Opis opis opis opis Opis opis opis opis Opis opis opis opis
-                        Opis opis opis opis Opis opis opis opis Opis opis opis opis
-                        Opis opis opis opis Opis opis opis opis Opis opis opis opis
-                        Opis opis opis opis Opis opis opis opis Opis opis opis opis
-                        Opis opis opis opis Opis opis opis opis Opis opis opis opis
-                        Opis opis opis opis Opis opis opis opis Opis opis opis opis
-                        Opis opis opis opis Opis opis opis opis Opis opis opis opis
-                        Opis opis opis opis Opis opis opis opis Opis opis opis opis
-                    </p>
-                </details>
-
-                <details>
-                    <summary>Lokacija</summary>
-                    <p>******* *****, **, Beograd 11000</p>
-                </details>
-
-                <details>
-                    <summary>Vreme</summary>
-                    <p>Dogadjaj se održava xx.xx.2026. u xx:xx časova.</p>
-                </details>
-
-            </div>
-        </div>   
-        </div>-->
-
-        <div class="DivNovosti">
-            <div class="Sekcija">
-
-            <div class="Program">
-                <div>
-                    <i class="fas fa-newspaper ProgramIcon"></i>
-                    <p class="LittleText" id="program">Nastup uz studijski bend i godišnji koncerti Kreatopolis Art Studija</p> 
-
-                    <p class="LittleText" id="LittleTextProgram">Polaznici koji žele da svoje znanje pretoče u praktično izvođačko iskustvo
-mogu učestvovati na koncertima Kreatopolis Art Studija uz podršku studijskog
-benda.</p>
-                    <button id="ViseInformacija" class="izrolaj" onclick="izrolaj('novosti-1', this)">Više informacija →</button>
-                </div>
-            </div>
-
-            <div class="Podsekcija" id="novosti-1">
-
-                <details>
-                    <summary>O Dešavanju</summary>
-                    <p><span class="ink"> <br>Ovaj dodatak obuhvata:</span><br><br>
-
-• izbor i pripremu repertoara;<br><br>
-• rad na interpretaciji pesme;<br><br>
-• probe u muzičkom studiju<br><br>
-• probe sa školskim bendom;<br><br>
-• razvoj sigurnosti u izvođenju uživo;<br><br>
-• iskustvo rada u profesionalnom muzičkom okruženju.<br><br>
-Probe se održavaju u prostorijama škole, kao i u profesionalnom studijskom
-okruženju, pružajući polaznicima priliku da upoznaju proces rada koji prati
-stvarne muzičke projekte.<br><br>
-Tokom godine Kreatopolis Art Studio organizuje dva godišnja koncerta, na
-kojima polaznici imaju priliku da predstave svoj napredak publici i steknu
-dragoceno iskustvo javnog nastupa.<br><br>
-Učešće na koncertima podrazumeva kompletnu pripremu — od rada na
-pesmi i interpretaciji, preko proba sa bendom, do samog izvođenja pred
-publikom.<br><br>
-Cilj Standardnog programa nije samo razvoj kvalitetnog glasa, već stvaranje
-sigurnog, muzikalnog i autentičnog pevača koji kroz stručan rad, praktično
-iskustvo i nastupe otkriva svoj lični muzički put.<br><br>
-Bilo da polaznik želi da pevanje ostane njegova strast i hobi, ili tek istražuje
-mogućnost ozbiljnijeg bavljenja muzikom, Standardni program pruža stabilne
-temelje za svaki naredni korak.
-                    </p>
-                </details>
-
-            </div>
-        </div>   
-        </div>
-    </section>
 
     
     <script src="JS/script.js"></script>
